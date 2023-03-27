@@ -1,0 +1,14 @@
+
+.timTimeSet {
+    width: 1500px;
+    margin: 0 auto;
+    display: flex;
+}
+
+ 
+.timTimeSet .timSection {
+    border: 1px solid #000;     
+    width: 30%;
+    
+} 
+

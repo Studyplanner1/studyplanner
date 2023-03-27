@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="timercss.css">
+    <script type="module" src="timer.js" defer></script>
+
+</head>
+<body>
+
+<div class="timNowTime">
+    <h1 id="clock"></h1> 
+</div>    
+<div class="timTimeSet">
+
+
+    <div class="timSection timDday">
+        <!-- D-DAY -->
+        <!-- d-day 설정. 숨기기, 설정 누르면 나타나기.   -->
+        <div class="timeDday setting" > 
+            <input type="date" id="endday"style="display: inline">
+            <button id="ddaybtn" style="display: inline">설정</button>
+            <!-- 아이콘으로 설정 만들어주기  -->
+            <span>설정</span>
+        </div>
+        
+        <div> 
+            <p></p><span>일 남았습니다</span>
+
+        </div>
+
+
+    </div>
+    <div class="timSection timTimeUp">
+        <!-- TIMER -->
+    <button class="tim25min">25min</button>
+    <button class="tim5min">5min</button>
+    <button class="tim1min">1min</button>
+
+    <div class="timLestTime"> 
+        <p><span>M</span> <span>S</span></p>
+        
+    </div>
+
+    <!-- 숨겨놓기, 시간완료시 나타나기 -->
+    <p>TIME UP!</p>
+
+    </div>
+    <div class="timSection  timLearningTime">
+        <!-- LEARNING TIME -->
+        <div class="timRunning"> 
+            <p><span>H</span></p>
+            <p><span>M</span></p>
+            <p><span>S</span></p>    
+        </div>
+
+        <button class="LearningTimebtnStart">시작</button>
+        <button class="LearningTimebtnEnd">끝</button>
+
+        <p>오늘의 공부시간은 <span> </span> 입니다. </p>
+        <button class="savingToCD">캘린더에 저장</button>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>
