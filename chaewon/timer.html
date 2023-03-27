@@ -28,7 +28,7 @@
         </div>
         
         <div> 
-            <p></p><span>일 남았습니다</span>
+            <p><span id="d-day"></span>일 남았습니다</p>
 
         </div>
 
@@ -40,8 +40,8 @@
     <button class="tim5min">5min</button>
     <button class="tim1min">1min</button>
 
-    <div class="timLestTime"> 
-        <p><span>M</span> <span>S</span></p>
+    <div class="timRestTime"> 
+        <p class="restTime"><span id="restMin">00 : 00</span> </p>
         
     </div>
 
@@ -51,14 +51,15 @@
     </div>
     <div class="timSection  timLearningTime">
         <!-- LEARNING TIME -->
-        <div class="timRunning"> 
-            <p><span>H</span></p>
-            <p><span>M</span></p>
-            <p><span>S</span></p>    
+        <div > 
+            <p class="timRunning">
+               00:00:00
+            </p>    
         </div>
 
-        <button class="LearningTimebtnStart">시작</button>
-        <button class="LearningTimebtnEnd">끝</button>
+        <button class="LearningTimebtnStart">start</button>
+        <button class="LearningTimebtnStop">stop</button>
+        <button class="LearningTimebtnReset">reset</button>
 
         <p>오늘의 공부시간은 <span> </span> 입니다. </p>
         <button class="savingToCD">캘린더에 저장</button>
