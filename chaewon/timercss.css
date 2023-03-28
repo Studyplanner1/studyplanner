@@ -1,6 +1,24 @@
-
-.timTimeSet {
+body {
     width: 1500px;
+    border: 1px solid #7415e0;
+    margin: 0 auto;
+}
+.timNowTime {
+    border: 1px solid #0cc945;
+    width: 70%;
+    margin: 0 auto;
+    
+
+}
+.timTimeSection #clock {
+    width: fit-content;
+    border: 1px solid #ec2121;
+    margin-bottom: 0;
+
+}
+.timTimeSet {
+    width: 70%;
+    border: 1px solid #000;
     margin: 0 auto;
     display: flex;
 }
@@ -9,6 +27,16 @@
 .timTimeSet .timSection {
     border: 1px solid #000;     
     width: 30%;
+    margin: 0 auto;
     
 } 
+.displayBlock {
+    display: none;
+}
 
+.timeDdaysetting {
+    border: 1px solid #000;   
+    text-align: right;
+    padding: 2px 1px;
+    height: 3dvh;
+}
