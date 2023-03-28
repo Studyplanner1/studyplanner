@@ -1,42 +1,149 @@
+
+@import url(common.css);
+
+
 body {
     width: 1500px;
-    border: 1px solid #7415e0;
+    background: #EEF1FF;
+    /* border: 1px solid #7415e0; */
     margin: 0 auto;
+
 }
 .timNowTime {
-    border: 1px solid #0cc945;
+    /* border: 1px solid #0cc945; */
     width: 70%;
     margin: 0 auto;
+    margin-top: 70px;
     
 
 }
+/* today, now  전체 테이블*/
 .timTimeSection #clock {
     width: fit-content;
     border: 1px solid #ec2121;
+    margin-left: 2%;
     margin-bottom: 0;
 
 }
-.timTimeSet {
+.timTimeSection .timTimeSet {
     width: 70%;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     margin: 0 auto;
     display: flex;
 }
 
  
-.timTimeSet .timSection {
-    border: 1px solid #000;     
+.timTimeSection .timTimeSet .timSection {
+    border: 1px solid #ccc;     
     width: 30%;
+    height: 300px;
+    background: #D5E2FF;
     margin: 0 auto;
     
 } 
+/* today, now, 전체 테이블  끝*/
+
+
+/* DDAY 설정 및 차감 */
 .displayBlock {
     display: none;
 }
 
-.timeDdaysetting {
-    border: 1px solid #000;   
+.timesetting {
+    /* border: 1px solid #000;    */
     text-align: right;
     padding: 2px 1px;
-    height: 3dvh;
+    height: 4dvh;
+}
+
+#ddaybtn {
+    background-color:  #fff;
+    border: 1px solid #6aafe6;
+    border-radius: 10%;
+}
+#ddaybtn:hover {
+background-color: #CCC;
+
+}
+.timTimeSection .timTimeSet .timDday .timDdayTitle {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+    /* background: #0cc945; */
+}
+.timTimeSection .timTimeSet .timDday .timDdayText {
+   /* background: red; */
+   margin: 25% 0;
+   text-align: center;
+   font-size: 50px;
+}
+/* DDAY 설정 및 차감  끝*/
+
+
+
+/* 스톱워치 css */
+
+
+.timTimeSection .timTimeSet .timTimeUp .timRestTime .restTime {
+    margin: 20% 0 10% 0;
+    text-align: center;
+    font-size: 50px;
+
+}
+
+.timTimeSection .timTimeSet .timTimeUp .timRestTime .timTimeupTitle {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}    
+    
+.timTimeSection .timTimeSet .timTimeUp .btnMin {
+    /* border: 1px solid #000; */
+    text-align: center;
+    
+}
+.timTimeSection .timTimeSet .timTimeUp .btnMin button {
+    /* border: 1px solid #000; */
+    margin: 0 5%;
+    background-color:  #fff;
+    border: 1px solid #6aafe6;
+    border-radius: 10%;
+}
+.timTimeSection .timTimeSet .timTimeUp.btnMin .tim25min:hover {
+    background-color: #ccc;
+}
+
+/* 스톱워치  끝*/
+
+
+.timTimeCountTitle {
+    text-align: center;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.timTimeSection .timTimeSet .timLearningTime .timRunning {
+    margin: 20% 0 10% 0;
+    text-align: center;
+    font-size: 50px;
+}
+.timTimeSection .timTimeSet .timLearningTime .LearningTimebtn {
+    text-align: center;
+
+}
+.timTimeSection .timTimeSet .timLearningTime .LearningTimebtn button {
+     margin: 0 5%;
+
+}.timTimeSection .timTimeSet .timLearningTime > P{
+    /* border: 1px solid #000; */
+    padding-top: 3%;
+    text-align: center;
+}
+
+.savingToCD {
+    display: none;
+
+}
+#timRecord {
+    padding-bottom: 3%;
 }

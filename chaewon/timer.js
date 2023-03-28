@@ -29,7 +29,17 @@ $ddaybtn.onclick = () => {
     const untilDday = new Date(dDay - today);
     const until = String(Math.floor(untilDday/(1000 * 60* 60 * 24))+1);
     const $restDay = document.getElementById('d-day');
-    $restDay.innerText = `D - ${until} `
+    
+    if(until === "0") {
+        $restDay.innerText =`D-DAY`
+    } else if(until <= "0") {
+        $restDay.innerText =`D-DAY 가 지났습니다`
+    }
+    else {
+         $restDay.innerText = `D - ${until} `
+    }
+   
+    
 }
 
 const $settingIcon = document.getElementById('timsettingIcon');
@@ -47,7 +57,8 @@ const tim5min = document.querySelector('.tim5min');
 const tim25min = document.querySelector('.tim25min');
 const tim1min = document.querySelector('.tim1min');
 const $restTime = document.querySelector('.restTime');
-let sec = 59;
+const $timeUp = document.querySelector('timeUp');
+let sec = 60;
 let min = 0;
 let tim;
 
@@ -60,39 +71,55 @@ function timeout() {
         sec = 59; 
         if(min < 0 ){
             min = 0;
-            sec= 0; 
+            sec= 0;
+           // 
+
             return;
         }
     } 
-    $restTime.textContent = `${min} : ${sec}`; 
+   
+}
+
+function sub() {
+    timeout();
+    $restTime.textContent = (min > 9 ? min : "0" + min) 
+                            +" : "+ (sec> 9 ? sec : "0" + sec);
     time();
 }
 
 function time() {
-    tim = setTimeout(timeout, 1000);
+    tim = setTimeout(sub, 1000);
+    return;
 }
 
 tim25min.onclick = function() {
+    sec = 60;
     min= 24;
     time();
+    
 }   
 
 //5분
 tim5min.onclick= function() {
+    sec = 60;
     min = 4;
     time();
+    
 
 } 
 
 //1분
 tim1min.onclick = function() {
+    sec = 60;
+    min=0;
     time();
+    
 }
 
 
 
 //LearningTime
-
+ const $saving = document.querySelector('.savingToCD');
 const btnStart = document.querySelector('.LearningTimebtnStart');
 const btnStop = document.querySelector('.LearningTimebtnStop');
 const btnReset = document.querySelector('.LearningTimebtnReset');
@@ -135,11 +162,14 @@ function timer() {
 btnStart.onclick = timer;
 btnStop.onclick = function() {
     clearTimeout(t);
-    timRecord.textContent = runTime.textContent;
+    timRecord.textContent = runTime.textContent;   
+    // $saving.classList.toggle('savingToCD');
 }
 btnReset.onclick = function() {
     runTime.textContent = "00:00:00";
     seconds = 0; minutes = 0; hours = 0; 
+    timRecord.textContent="";
 
+    // $saving.classList.toggle('savingToCD');
     return;
 }
