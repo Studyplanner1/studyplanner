@@ -29,6 +29,8 @@ function addTodo() {
     $tdAddLi.appendChild($tdAddLiText);
     // $tdAddLi.textContent = $tdInputtext.value;
 
+    $tdAddLi.addEventListener('click', finishTodo);
+
     // 우측에 수정 버튼 추가 (추가예정)
     let $tdAddLiAmendBtn = document.createElement('button');
     $tdAddLiAmendBtn.setAttribute('class', 'td-list-amend-btn');
@@ -58,27 +60,43 @@ function deleteTodo(e) {
 
 // 특정 할일 수정 함수
 function amendTodo(e) {
-    // 타겟 li
+    const BEFORE_AMEND = 'td-list-li-text';
+    const AFTER_AMEND = 'td-list-li-text td-amend-input';
+    // 수정 타겟 li
     let $tdTargetLi = e.target.closest('li');
     // 타겟 li의 첫번째 자식의 class이름
-    let $tdTargetLiChild = e.target.closest('li').firstElementChild.className;
-
-    if ($tdTargetLiChild === 'td-list-li-text') {
+    let $tdTargetLiChildClass = e.target.closest('li').firstElementChild.className;
+    if ($tdTargetLiChildClass === BEFORE_AMEND) {
         // 수정 전 펜 버튼 클릭
         $tdAmendLi = $tdTargetLi.firstElementChild; // span 태그
         $tdAmendInput = document.createElement('input');
         $tdAmendInput.setAttribute('type', 'text');
-        $tdAmendInput.setAttribute('class', 'td-amend-input');
+        $tdAmendInput.setAttribute('class', AFTER_AMEND);
         $tdAmendInput.value = $tdAmendLi.textContent;
         $tdTargetLi.replaceChild($tdAmendInput, $tdAmendLi);
         $tdAmendInput.focus();
-    } else if ($tdTargetLiChild === 'td-amend-input') {
+    } else if ($tdTargetLiChildClass === AFTER_AMEND) {
         // 수정 후 펜 버튼 클릭
         $tdAmendLi.textContent = $tdAmendInput.value;
         $tdTargetLi.replaceChild($tdAmendLi, $tdAmendInput);
         $tdAmendInput.remove();
     }
+}
 
+// 할일 클릭하면 취소선 그어지는 함수
+function finishTodo(e) {
+    $tdFinishTarget = e.target;
+    const BEFORE_FINISH = 'td-list-li-text';
+    const AFTER_FINISH = 'td-list-li-text finish-todo';
+    if ($tdFinishTarget.className === BEFORE_FINISH) {
+        // 취소선 그은 후에는 span 태그에 finish-todo 클래스 추가됨
+        $tdFinishTarget.setAttribute('class', AFTER_FINISH);
+        $tdFinishTarget.style.textDecoration = 'line-through';
+    } else if ($tdFinishTarget.className === AFTER_FINISH) {
+        // 취소선 그은 후 다시 클릭하면 finish-todo 클래스 삭제 + 원상태로 롤백
+        $tdFinishTarget.setAttribute('class', BEFORE_FINISH);
+        $tdFinishTarget.style.textDecoration = 'none'
+    }
 }
 
 // 모든 할일 삭제 함수
