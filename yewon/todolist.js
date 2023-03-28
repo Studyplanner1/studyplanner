@@ -93,11 +93,11 @@ function finishTodo(e) {
     const BEFORE_FINISH = 'td-list-li-text';
     const AFTER_FINISH = 'td-list-li-text finish-todo';
     if ($tdFinishTarget.className === BEFORE_FINISH) {
-        // 취소선 그은 후에는 span 태그에 finish-todo 클래스 추가됨
+        // 취소선 그은 후에는 span 태그에 finish-todo 클래스 추가 + 맨 밑으로
         $tdFinishTarget.setAttribute('class', AFTER_FINISH);
         $tdFinishTarget.style.textDecoration = 'line-through';
     } else if ($tdFinishTarget.className === AFTER_FINISH) {
-        // 취소선 그은 후 다시 클릭하면 finish-todo 클래스 삭제 + 원상태로 롤백
+        // 취소선 그은 후 다시 클릭하면 finish-todo 클래스 삭제 + 맨 위로
         $tdFinishTarget.setAttribute('class', BEFORE_FINISH);
         $tdFinishTarget.style.textDecoration = 'none'
     }

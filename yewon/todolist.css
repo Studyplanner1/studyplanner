@@ -41,7 +41,7 @@ body {
 #td-box .td-input .td-inputtext {
     padding: 10px;
     width: 80%;
-    margin-right: 10px;
+    margin-right: 18px;
     border-style: none;
     font-size: 20px;
     font-family: inherit;
@@ -128,7 +128,7 @@ body {
 }
 
 #td-wrap #td-box button i {
-    font-size: 30px;
+    font-size: 25px;
 }
 
 /* 버튼들 끝 */
@@ -152,7 +152,7 @@ body {
 
 #td-box .td-main .td-list li {
     background-color: #EFEDFF;
-    width: 90%;
+    width: 89%;
     padding: 5px 20px;
     margin: 10px;
     border-radius: 10px;
@@ -174,6 +174,10 @@ body {
     font-size: 23px;
 }
 
+#td-box .td-main .td-list li span.finish-todo {
+    color: #8f8f8f;
+}
+
 
 #td-box .td-main .td-list li button {
     font-size: 30px;
@@ -193,7 +197,7 @@ body {
 
 #td-wrap #td-box .td-footer button {
     width: 120px;
-    margin: 10px;
+    margin: 10px 30px 10px 10px;
     font-family: 'Jua', sans-serif;
     font-size: 16px;
 }
