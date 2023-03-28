@@ -43,9 +43,15 @@
     /* 리스트 목록의 최소 높이 */
     min-height: 500px;
 }
-#td-box .td-main .td-list > li {
+#td-box .td-main .td-list li {
     background-color: yellowgreen;
     width: 100%;
+    display: flex;
+    align-items: center;
+}
+#td-box .td-main .td-list li button {
+    font-size: 30px;
+    
 }
 /* #td-box .td-main .td-list */
 /* 리스트 목록 끝 */
