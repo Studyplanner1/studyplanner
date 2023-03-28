@@ -48,8 +48,12 @@ function addTodo() {
 
     // 수정 버튼 클릭 -> 특정 할일 수정 이벤트 실행
     $tdAddLiAmendBtn.addEventListener('click', amendTodo);
+
     // 완성된 li 태그를 ul 끝에 추가
     $tdList.appendChild($tdAddLi);
+
+    // input에 적힌 내용 지우기
+    $tdInputtext.value = '';
 }
 
 // 특정 할일 삭제 함수
