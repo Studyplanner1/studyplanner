@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="timercss.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
     <script type="module" src="timer.js" defer></script>
 
 </head>
@@ -23,8 +25,8 @@
         <div class="timeDday setting" > 
             <input type="date" id="endday"style="display: inline">
             <button id="ddaybtn" style="display: inline">설정</button>
-            <!-- 아이콘으로 설정 만들어주기  -->
-            <span>설정</span>
+            <!-- 아이콘으로 설정 만들어주기  설정 아이콘 누르면 설정 태그가 나타나도록 -->
+            <span><i class=" fa fa-cog"></i></span>
         </div>
         
         <div> 
@@ -41,7 +43,7 @@
     <button class="tim1min">1min</button>
 
     <div class="timRestTime"> 
-        <p class="restTime"><span id="restMin">00 : 00</span> </p>
+        <p class="restTime">00 : 00</p>
         
     </div>
 
@@ -61,7 +63,7 @@
         <button class="LearningTimebtnStop">stop</button>
         <button class="LearningTimebtnReset">reset</button>
 
-        <p>오늘의 공부시간은 <span> </span> 입니다. </p>
+        <p>오늘의 공부시간 <span id="timRecord"> </span></p>
         <button class="savingToCD">캘린더에 저장</button>
 
 
