@@ -1,0 +1,24 @@
+@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
+
+/* common style */
+* {
+    box-sizing: border-box;
+}
+
+/* body 선택자에 기본 폰트크기와 글꼴을 넣어주세요 */
+body {
+    font-size: 18px;
+    font-family: "Avenir","Apple SD Gothic Neo";
+}
+
+/* 추가 reset사항이 있으면 아래에 적어주세요. */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
