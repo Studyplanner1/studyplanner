@@ -38,6 +38,7 @@ body {
     display: flex;
     justify-content: center;
     padding: 10px;
+    margin-top: 10px;
 }
 
 /* 입력 */
@@ -49,9 +50,19 @@ body {
     font-size: 20px;
     font-family: inherit;
 }
-
+@keyframes input-todo {
+    0% {
+        outline-color: #fff;
+    }
+    100% {
+        background-color: rgb(231, 226, 255);
+        outline-color: rgb(120,76,213);
+    }   
+}
 #td-box .td-input .td-inputtext:focus {
-    outline: none;
+    animation-name: input-todo;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
 }
 
 /* 버튼들 */

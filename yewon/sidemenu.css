@@ -1,5 +1,16 @@
 /* 사이드메뉴 시작*/
-#td-wrap #gnb {
+header {
+    position: relative;
+}
+/* 햄버거 버튼 */
+header a.gnb-btn {
+    font-size: 50px;
+    position: absolute;
+    top: 30px;
+    left: 40px;
+}
+
+header #gnb {
     background: #fff;
     color: #9b9b9b;
     font-size: 22px;
@@ -7,7 +18,13 @@
     box-sizing: border-box;
 
     position: fixed;
-    /* right: -100%; */
+    left: 0;
+    -webkit-transform: matrix(1, 0, 0, 1, -400, 0);
+    -moz-transform: matrix(1, 0, 0, 1, -400, 0);
+    transform: matrix(1, 0, 0, 1, -400, 0);
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
     /* 메뉴 버튼 클릭할 때까지 숨겨두기 *display: none은 옆에서 나오는 효과 불가 */
     top: 0;
     width: 400px;
@@ -22,14 +39,9 @@
     font-family: 'Noto Sans KR', sans-serif;
     z-index: 100;
 }
-/* 햄버거 버튼 */
-#td-wrap #gnb a.gnb-btn {
-    background-color: red;
-    
-}
+
 /* 로고 */
-#td-wrap #gnb a.gnb-logo {
-    /* background-color: red; */
+header #gnb a.gnb-logo {
     width: 300px;
     height: fit-content;
     font-size: 30px;
@@ -37,7 +49,7 @@
     text-align: center;
 }
 /* < 버튼 */
-#td-wrap #gnb a.gnb-close {
+header #gnb a.gnb-close {
     top: 20px;
     right: 30px;
     width: 50px;
@@ -45,15 +57,14 @@
     position: absolute;
     text-align: center;
 }
-#td-wrap #gnb a.gnb-close:hover {
+header #gnb a.gnb-close:hover {
     color: rgb(120,76,213);
 }
-#td-wrap #gnb ul { 
+header #gnb ul { 
     height: fit-content;
     font-weight: 700;
 }
-#td-wrap #gnb ul a {
-    /* background: gray; */
+header #gnb ul a {
     padding: 30px 20px;
     margin-bottom: 30px;
     width: 350px;
@@ -61,7 +72,7 @@
     display: flex;
     align-items: center;
 }
-#td-wrap #gnb ul a i {
+header #gnb ul a i {
     /* background-color: red; */
     margin-right: 25px;
     font-size: 30px;
@@ -75,11 +86,22 @@
         color: white;
     }  
 }
-#td-wrap #gnb ul a:hover {
+header #gnb ul a:hover {
     animation-name: sidemenu-btn;
     animation-duration: 0.5s;
     animation-fill-mode: both;
     color: #fff;
 }
-
+/* 햄버거 버튼 눌렀을 때 */
+header #gnb.on {
+    left: -400px;
+}
+header #gnb.on.active {
+    -webkit-transform: matrix(1, 0, 0, 1, 400, 0);
+    -moz-transform: matrix(1, 0, 0, 1, 400, 0);
+    transform: matrix(1, 0, 0, 1, 400, 0);
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
 /* 사이드메뉴 끝 */
