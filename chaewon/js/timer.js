@@ -87,8 +87,12 @@ function sub() {
     time();
 }
 
+let Flag =  false; 
 function time() {
-    tim = setTimeout(sub, 1000);
+   if(!Flag) tim = setInterval(sub, 1000);
+
+   Flag=true;
+
     return;
 }
 
@@ -132,9 +136,6 @@ let t;
 
 
 function second() {
-  
-  
-  
     seconds++;
     if(seconds >=60 ) {
         seconds = 0 ;
@@ -145,21 +146,27 @@ function second() {
 
         }
     }
-    
+    return;
 }
 
 function add(){
+    
     second();
     runTime.textContent = (hours > 9 ? hours : "0" + hours) 
                         +":"+ (minutes > 9 ? minutes : "0" + minutes) 
                         +":"+ (seconds > 9 ? seconds : "0" + seconds);
-    
-    
+     
     timer();
+    return;
 
 }
+let startFlag =  false; 
 function timer() {
-    t = setTimeout(add, 1000);
+    
+    if(!startFlag) t = setInterval(add, 1000);
+    
+    startFlag = true;
+    return;
 }
 
 btnStart.onclick = timer;
@@ -167,6 +174,7 @@ btnStop.onclick = function() {
     clearTimeout(t);
     timRecord.textContent = runTime.textContent;   
     // $saving.classList.toggle('savingToCD');
+    startFlag= false;
 }
 btnReset.onclick = function() {
     runTime.textContent = "00:00:00";
