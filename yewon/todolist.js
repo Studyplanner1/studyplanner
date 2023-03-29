@@ -3,10 +3,10 @@
 const $tdInputBtn = document.querySelector('.td-inputbtn'); // + 버튼
 let $tdInputtext = document.querySelector('.td-inputtext'); // 입력한 할일
 // let $tdAddLi = document.querySelector('.td-result'); // 추가된 할일
-const $tdlist = document.querySelector('.td-list'); // 할일 목록 ul 태그
+const $tdList = document.querySelector('.td-list'); // 할일 목록 ul 태그
 
 $tdInputBtn.onclick = () => {
-    console.log($tdInputtext);
+    // console.log($tdInputtext);
     addTodo();
 }
 
@@ -18,49 +18,99 @@ function addTodo() {
         $tdInputtext.focus();
         return;
     }
-    // 입력한 할일로 li 태그 생성
+    // 할일 li 생성
     let $tdAddLi = document.createElement('li');
-    $tdAddLi.setAttribute('class', 'td-list-li');
+    $tdAddLi.setAttribute('class', 'td-list-li clearfix');
 
-    // li 태그 안에 p 태그 생성 - 할일 텍스트
+    // 할일 li에 텍스트, 클래스 추가
     let $tdAddLiText = document.createElement('span')
     $tdAddLiText.textContent = $tdInputtext.value;
     $tdAddLiText.setAttribute('class', 'td-list-li-text');
     $tdAddLi.appendChild($tdAddLiText);
     // $tdAddLi.textContent = $tdInputtext.value;
 
-    // li 태그 안에 삭제[ X ] 버튼 생성
+    $tdAddLi.addEventListener('click', finishTodo);
+
+    // 우측에 수정 버튼 추가 (추가예정)
+    let $tdAddLiAmendBtn = document.createElement('button');
+    $tdAddLiAmendBtn.setAttribute('class', 'td-list-amend-btn');
+    $tdAddLiAmendBtn.innerHTML = '<i class="fa-solid fa-pen"></i>'; // 펜 아이콘
+    $tdAddLi.appendChild($tdAddLiAmendBtn);
+
+    // 우측에 삭제 버튼 추가
     let $tdAddLiDelBtn = document.createElement('button');
     $tdAddLiDelBtn.setAttribute('class', 'td-list-del-btn');
-    $tdAddLiDelBtn.innerHTML = '<i class="fa-solid fa-x"></i>';
+    $tdAddLiDelBtn.innerHTML = '<i class="fa-solid fa-x"></i>'; // X 아이콘
     $tdAddLi.appendChild($tdAddLiDelBtn);
 
-    // X 버튼 누르면 리스트 지우기 이벤트 실행
+    // 삭제 버튼 클릭 -> 특정 할일 삭제 이벤트 실행
     $tdAddLiDelBtn.addEventListener('click', deleteTodo);
 
+    // 수정 버튼 클릭 -> 특정 할일 수정 이벤트 실행
+    $tdAddLiAmendBtn.addEventListener('click', amendTodo);
+
     // 완성된 li 태그를 ul 끝에 추가
-    $tdlist.appendChild($tdAddLi);
+    $tdList.appendChild($tdAddLi);
+
+    // input에 적힌 내용 지우기
+    $tdInputtext.value = '';
 }
 
-// 할일 삭제하는 함수
-// X 버튼 눌렀을 때 동작하는 핸들러
+// 특정 할일 삭제 함수
 function deleteTodo(e) {
-    // console.log(e);
-    // li 태그 지우기
-    if (e.target.className === 'fa-solid fa-x') {
-        // i 태그 눌렀을 때 li 삭제
-        let $deleteLi = e.target.parentElement.parentElement;
-        $deleteLi.remove();
-    } else {
-        // button 태그 눌렀을 때 li 삭제
-        let $deleteLi = e.target.parentElement;
-        $deleteLi.remove();
+    let $tdDeleteLi = e.target.closest('li');
+    $tdDeleteLi.remove();
+}
+
+// 특정 할일 수정 함수
+function amendTodo(e) {
+    const BEFORE_AMEND = 'td-list-li-text';
+    const AFTER_AMEND = 'td-list-li-text td-amend-input';
+    // 수정 타겟 li
+    let $tdTargetLi = e.target.closest('li');
+    // 타겟 li의 첫번째 자식의 class이름
+    let $tdTargetLiChildClass = e.target.closest('li').firstElementChild.className;
+    if ($tdTargetLiChildClass === BEFORE_AMEND) {
+        // 수정 전 펜 버튼 클릭
+        $tdAmendLi = $tdTargetLi.firstElementChild; // span 태그
+        $tdAmendInput = document.createElement('input');
+        $tdAmendInput.setAttribute('type', 'text');
+        $tdAmendInput.setAttribute('class', AFTER_AMEND);
+        $tdAmendInput.value = $tdAmendLi.textContent;
+        $tdTargetLi.replaceChild($tdAmendInput, $tdAmendLi);
+        $tdAmendInput.focus();
+    } else if ($tdTargetLiChildClass === AFTER_AMEND) {
+        // 수정 후 펜 버튼 클릭
+        $tdAmendLi.textContent = $tdAmendInput.value;
+        $tdTargetLi.replaceChild($tdAmendLi, $tdAmendInput);
+        $tdAmendInput.remove();
     }
 }
 
-// [모두 삭제] 버튼 누르면 모든 리스트 삭제
+// 할일 클릭하면 취소선 그어지는 함수
+function finishTodo(e) {
+    $tdFinishTarget = e.target;
+    const BEFORE_FINISH = 'td-list-li-text';
+    const AFTER_FINISH = 'td-list-li-text finish-todo';
+    if ($tdFinishTarget.className === BEFORE_FINISH) {
+        // 취소선 그은 후에는 span 태그에 finish-todo 클래스 추가 + 맨 밑으로
+        $tdFinishTarget.setAttribute('class', AFTER_FINISH);
+        $tdFinishTarget.style.textDecoration = 'line-through';
+    } else if ($tdFinishTarget.className === AFTER_FINISH) {
+        // 취소선 그은 후 다시 클릭하면 finish-todo 클래스 삭제 + 맨 위로
+        $tdFinishTarget.setAttribute('class', BEFORE_FINISH);
+        $tdFinishTarget.style.textDecoration = 'none'
+    }
+}
+
+// 모든 할일 삭제 함수
 const $tdDelBtn = document.querySelector('.td-del-btn');
 
 $tdDelBtn.onclick = () => {
-    alert("모든 일정을 삭제하시겠습니까?");
+    // 삭제 의사 한번 더 확인
+    if (confirm("모든 일정을 삭제하시겠습니까?") === true) {
+        $tdList.innerHTML = '';
+    } else {
+        return;
+    }
 }
