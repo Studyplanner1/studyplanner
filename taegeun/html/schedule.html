@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../common.css">
+    <script src="https://kit.fontawesome.com/625f8d18ca.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/schedule.css">
+    <script type="module" src="../js/schedule.js" defer></script>
+</head>
+
+<body>
+    <!-- <div class="SC_mainImg">
+        img영역
+    </div> -->
+
+    <!-- <h1>CALENDAR</h1> -->
+    <div class="CD_boxWrap">
+        <!-- 왼쪽영역 -->
+        <section class="CD_boxLeft">
+            <div class="CD_boxLeftWrap">
+                <div class="CD_SMCalendar">
+                    <div class="CD_SMMonth>">
+                        <i class="fas fa-angle-left SMprev"></i>
+                        <div class="CD_SMcurrentMonth">March</div>
+                        <i class="fas fa-angle-right SMnext"></i>
+
+                    </div>
+                    <div class="CD_SmallDays">
+                        <div class="CD_day prev-date">26</div>
+                        <div class="CD_day prev-date">27</div>
+                        <div class="CD_day prev-date">28</div>
+                        <div class="CD_day">1</div>
+                        <div class="CD_day">2</div>
+                        <div class="CD_day">3</div>
+                        <div class="CD_day">4</div>
+                        <div class="CD_day">5</div>
+                        <div class="CD_day">6</div>
+                        <div class="CD_day">7</div>
+                        <div class="CD_day">8</div>
+                        <div class="CD_day">9</div>
+                        <div class="CD_day">10</div>
+                        <div class="CD_day">11</div>
+                        <div class="CD_day">12</div>
+                        <div class="CD_day">13</div>
+                        <div class="CD_day">14</div>
+                        <div class="CD_day">15</div>
+                        <div class="CD_day">16</div>
+                        <div class="CD_day">17</div>
+                        <div class="CD_day">18</div>
+                        <div class="CD_day">19</div>
+                        <div class="CD_day">20</div>
+                        <div class="CD_day">21</div>
+                        <div class="CD_day">22</div>
+                        <div class="CD_day event">23</div>
+                        <div class="CD_day">24</div>
+                        <div class="CD_day">25</div>
+                        <div class="CD_day">26</div>
+                        <div class="CD_day">27</div>
+                        <div class="CD_day today active">28</div>
+                        <div class="CD_day">29</div>
+                        <div class="CD_day">30</div>
+                        <div class="CD_day">30</div>
+                        <div class="CD_day next-date">1</div>
+                        <div class="CD_day next-date">2</div>
+                        <div class="CD_day next-date">3</div>
+                        <div class="CD_day next-date">4</div>
+                        <div class="CD_day next-date">5</div>
+                        <div class="CD_day next-date">6</div>
+                        <div class="CD_day next-date">7</div>
+                        <div class="CD_day next-date">8</div>
+                    </div>
+                </div>
+                <div class="CD_selectCalendar">
+                    <a href="">Personal</a>
+                    <a href="">Public</a>
+                    <a href="">Birthday</a>
+                    <a href="">Holidays</a>
+                    <a href="">새로운 종류를 추가해보세요!</a>
+                </div>
+            </div>
+        </section>
+        <!-- 오른쪽영역 -->
+        <section class="CD_boxRight">
+            <div class=CD_selectYear>
+
+                <i class="fas fa-angle-left prev"></i>
+                <div class="CD_mainMonth">
+                    <h2 class="CD_currentMonth"></h2>
+                    <h3 class="CD_currentYear"></h3>
+                </div>
+                <i class="fas fa-angle-right next"></i>
+
+
+                <!-- <div class="CD_rightselectYear">
+                    <button class="selectDay">DAY</button>
+                    <button class="selectWeek">WEEK</button>
+                </div> -->
+            </div>
+            <div class=CD_mainCalendar>
+                <div class="CD_weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="CD_days">
+                    <!-- <div class="CD_day prev-date">26</div>
+                    <div class="CD_day prev-date">27</div>
+                    <div class="CD_day prev-date">28</div>
+                    <div class="CD_day">1</div>
+                    <div class="CD_day">2</div>
+                    <div class="CD_day">3</div>
+                    <div class="CD_day">4</div>
+                    <div class="CD_day">5</div>
+                    <div class="CD_day">6</div>
+                    <div class="CD_day">7</div>
+                    <div class="CD_day">8</div>
+                    <div class="CD_day">9</div>
+                    <div class="CD_day">10</div>
+                    <div class="CD_day">11</div>
+                    <div class="CD_day">12</div>
+                    <div class="CD_day">13</div>
+                    <div class="CD_day">14</div>
+                    <div class="CD_day">15</div>
+                    <div class="CD_day">16</div>
+                    <div class="CD_day">17</div>
+                    <div class="CD_day">18</div>
+                    <div class="CD_day">19</div>
+                    <div class="CD_day">20</div>
+                    <div class="CD_day">21</div>
+                    <div class="CD_day">22</div>
+                    <div class="CD_day event">23</div>
+                    <div class="CD_day">24</div>
+                    <div class="CD_day">25</div>
+                    <div class="CD_day">26</div>
+                    <div class="CD_day">27</div>
+                    <div class="CD_day today active">28</div>
+                    <div class="CD_day">29</div>
+                    <div class="CD_day">30</div>
+                    <div class="CD_day">30</div>
+                    <div class="CD_day next-date">1</div>
+                    <div class="CD_day next-date">2</div>
+                    <div class="CD_day next-date">3</div>
+                    <div class="CD_day next-date">4</div>
+                    <div class="CD_day next-date">5</div>
+                    <div class="CD_day next-date">6</div>
+                    <div class="CD_day next-date">7</div>
+                    <div class="CD_day next-date">8</div> -->
+                </div>
+                <div class="CD_goto-today">
+                    <div class="goto">
+                        <input type="text" placeholder="mm/yyyy" class="date-input">
+                        <button class="goto-btn">go</button>
+                    </div>
+                    <button class="today-btn">today</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+</body>
+
+</html>

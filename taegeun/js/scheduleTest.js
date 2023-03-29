@@ -4,7 +4,7 @@ const monthNames = ["January", "February", "March", "April", "May", "June",
 ];
 
 
-
+/*
 const renderCalender = () => {
     const viewMonth = date.getMonth()+1;
     const viewYear = date.toDateString();
@@ -60,3 +60,4 @@ $next.addEventListener('click', () => {
 });
 
 renderCalender();
+*/
