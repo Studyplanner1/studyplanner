@@ -50,7 +50,7 @@ $settingIcon.onclick = function (){
 }
 
 
-//time-out구현...모르겠다..
+//time-out
 //25분
 
 const tim5min = document.querySelector('.tim5min');
@@ -119,7 +119,7 @@ tim1min.onclick = function() {
 
 
 //LearningTime
- const $saving = document.querySelector('.savingToCD');
+
 const btnStart = document.querySelector('.LearningTimebtnStart');
 const btnStop = document.querySelector('.LearningTimebtnStop');
 const btnReset = document.querySelector('.LearningTimebtnReset');
@@ -132,6 +132,9 @@ let t;
 
 
 function second() {
+  
+  
+  
     seconds++;
     if(seconds >=60 ) {
         seconds = 0 ;
