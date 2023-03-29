@@ -1,0 +1,26 @@
+@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
+     /*reset을 포함  */
+ @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+
+/* common style */
+        * {
+            box-sizing: border-box;
+        }
+/* 기본 폰트크기와 글꼴 넣기~~ 등의 설명을 작성해주면 좋음 */
+        body {
+            font-size: 18px; 
+            font-family: 'Jua', sans-serif;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+  

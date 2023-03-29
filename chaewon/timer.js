@@ -29,59 +29,97 @@ $ddaybtn.onclick = () => {
     const untilDday = new Date(dDay - today);
     const until = String(Math.floor(untilDday/(1000 * 60* 60 * 24))+1);
     const $restDay = document.getElementById('d-day');
-    $restDay.innerText = `D - ${until} `
+    
+    if(until === "0") {
+        $restDay.innerText =`D-DAY`
+    } else if(until <= "0") {
+        $restDay.innerText =`D-DAY 가 지났습니다`
+    }
+    else {
+         $restDay.innerText = `D - ${until} `
+    }
+   
+    
+}
+
+const $settingIcon = document.getElementById('timsettingIcon');
+console.log($settingIcon);
+$settingIcon.onclick = function (){
+    $dday.classList.toggle('displayBlock');
+   $ddaybtn.classList.toggle('displayBlock');
 }
 
 
 //time-out구현...모르겠다..
 //25분
-let sec = 59;
-let min = "";
-let time;
 
-const $tim25min = document.querySelector('.tim25min');
+const tim5min = document.querySelector('.tim5min');
+const tim25min = document.querySelector('.tim25min');
+const tim1min = document.querySelector('.tim1min');
 const $restTime = document.querySelector('.restTime');
-// $tim25min.onclick = 
+const $timeUp = document.querySelector('timeUp');
+let sec = 60;
+let min = 0;
+let tim;
 
-function sec() {
-    min= 25;
+//console.log(tim25min);
+
+function timeout() {
     sec--;
-    if(sec < 1) {
-        sec = 0;
-        min--;        
-    }
+    if(sec < 0) {
+        min--;
+        sec = 59; 
+        if(min < 0 ){
+            min = 0;
+            sec= 0;
+           // 
+
+            return;
+        }
+    } 
+   
 }
 
 function sub() {
-    sec();
-    $restTime =  (min > 9 ? min : "0" + min) 
-                 +":"+ (sec > 9 ? sec : "0" + sec);
+    timeout();
+    $restTime.textContent = (min > 9 ? min : "0" + min) 
+                            +" : "+ (sec> 9 ? sec : "0" + sec);
     time();
-
 }
+
 function time() {
-    time = setTimeout(sub, 1000);
+    tim = setTimeout(sub, 1000);
+    return;
 }
 
-$tim25min.onclick = time;
-
+tim25min.onclick = function() {
+    sec = 60;
+    min= 24;
+    time();
+    
+}   
 
 //5분
+tim5min.onclick= function() {
+    sec = 60;
+    min = 4;
+    time();
+    
 
-
-
-
-
+} 
 
 //1분
-
-
-
+tim1min.onclick = function() {
+    sec = 60;
+    min=0;
+    time();
+    
+}
 
 
 
 //LearningTime
-
+ const $saving = document.querySelector('.savingToCD');
 const btnStart = document.querySelector('.LearningTimebtnStart');
 const btnStop = document.querySelector('.LearningTimebtnStop');
 const btnReset = document.querySelector('.LearningTimebtnReset');
@@ -124,11 +162,14 @@ function timer() {
 btnStart.onclick = timer;
 btnStop.onclick = function() {
     clearTimeout(t);
-    timRecord.textContent = runTime.textContent;
+    timRecord.textContent = runTime.textContent;   
+    // $saving.classList.toggle('savingToCD');
 }
 btnReset.onclick = function() {
     runTime.textContent = "00:00:00";
     seconds = 0; minutes = 0; hours = 0; 
+    timRecord.textContent="";
 
+    // $saving.classList.toggle('savingToCD');
     return;
 }
