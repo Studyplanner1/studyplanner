@@ -1,5 +1,5 @@
 body {
-    width: 1500px;
+    width: 1000px;
     margin: 100px auto;
     background: #f5f5f5;
 }
@@ -73,7 +73,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4em;
+    height: 2em;
     font-size: 1.1em;
     /* border: 1px solid #000; */
 }
@@ -84,7 +84,7 @@ h1 {
 .CD_boxLeft .CD_selectCalendar a {
     /* color: aliceblue; */
     background: black;
-    width: 300px;
+    width: 200px;
     text-align: center;
     margin: 15px 20px 0px;
     padding: 10px;
