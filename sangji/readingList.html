@@ -5,16 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Rowdies:wght@300&family=Yeseva+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.google.com/noto/specimen/Noto+Sans+KR?preview.text=%EC%8A%A4%EC%BC%80%EC%A4%84%EB%9F%AC&preview.text_type=custom&subset=korean&noto.script=Kore">
     <link rel="stylesheet" href="readingList.css">
     <script type="module" src="readingList.js" defer></script>
-    <title></title>
+
+    <title>ReadingList</title>
 
 </head>
 
 <body>
-    
+
     <div class="container">
-        <h1>Reading List</h1>
+        <div class="h1box">
+            <h1>Reading List</h1>
+        </div>
         <table class="_table">
             <thead>
                 <tr>
@@ -25,11 +34,11 @@
                     <th>완독여부</th>
                     <th>비고</th>
 
-                    <!-- 추가 js -->
+                    <!-- add js -->
                     <th width="30px">
                         <div class="action_container">
-                            <button class="success" onclick="add_tr('table_body')">추가
-                            </button>
+                            <button class="add" onclick="add_tr('table_body'), count(plus)">
+                                <i class="fa-solid fa-plus fa-2x"></i></button>
                         </div>
                     </th>
                 </tr>
@@ -38,29 +47,34 @@
             </thead>
             <tbody id="table_body">
                 <tr>
-                    <td data-th="rl_number">
+                    <td class="form_control" id="rl_number" >
                         1
                     </td>
-                    <td data-th="rl_table">
+                    <td id=" rl_table">
                         <input type="text" class="form_control" placeholder="예) 세이노의 가르침">
                     </td>
-                    <td data-th="rl_publisher">
+                    <td id="rl_table">
                         <input type="text" class="form_control" placeholder="예) 데이원/세이노">
                     </td>
-                    <td data-th="rl_field">
+                    <td id="rl_table">
                         <input type="text" class="form_control" placeholder="예) 자기계발">
                     </td>
-                    <td data-th="rl_read">
-                        <input type="text" class="form_control" placeholder="예) O 23/03/28">
+                    <td id="rl_table" class="form_control">
+                        <!-- <input type="text" class="form_control" placeholder="예) O 23/03/28"> -->
+                        <select name="coffee" >
+                            <option value="rl_complete">O</option>
+                            <option value="rl_fail" selected>X</option>
+                            </select>
                     </td>
-                    <td data-th="rl_etc">
+                    <td id="rl_table">
                         <input type="text" class="form_control" placeholder="예) 추천받은 책">
                     </td>
+
                     <!-- 삭제 button  -->
                     <td>
                         <div class="action_container">
-                            <button class="danger" onclick="remove_tr(this)">삭제
-                            </button>
+                            <button class="delete" onclick="remove_tr(this), count(plus)">
+                                <i class="fa-solid fa-minus fa-2x"></i></button>
                         </div>
                     </td>
                 </tr>

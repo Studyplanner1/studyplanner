@@ -1,0 +1,85 @@
+@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
+
+/* common style */
+* {
+    box-sizing: border-box;
+    font-family: 'Jua', sans-serif;
+}
+
+/* body 선택자에 기본 폰트크기와 글꼴을 넣어주세요 */
+body {
+    font-size: 18px;
+    font-family: 'Jua', sans-serif;
+    background: rgb(247,248,251);
+    width: 1920px;
+}
+
+.container{
+    background:rgb(237,235,247); 
+    width: 1500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    border-radius: 30px;
+}
+ .container .h1box{
+    /* background: olivedrab; */
+    width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+   
+ }
+ 
+ .container .h1box h1{
+    font-size: 2.0em;
+    margin-top: 20px;
+  
+
+ }
+
+ .container .logininfo{
+    /* background: orange; */
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+
+ .container .logininfo .logininput input{
+    flex: 1;
+    height: 35px;
+    padding: 0 4px;
+    border: 0;
+    background: none;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    width: 200px;
+}
+
+.container .logininfo .loginbutton{
+    background: #000;
+    /* position: relative; */
+    
+
+}
+
+.container .logininfo .loginbutton button{
+background: rgb(237,235,247);
+border-radius: 20px;
+border: 1px solid rgb(120,76,213);
+padding: 10px;
+/* margin: 0 auto; */
+width: 100px;
+color: rgb(120,76,213);
+/* align-items: center;
+justify-content: center; */
+}
+
+.container .logininfo .loginbutton button:hover{
+    background: rgb(120,76,213);
+    color: rgb(237,235,247);
+}
