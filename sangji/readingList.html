@@ -1,115 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="readingList.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="readingList.css">
+    <script type="module" src="readingList.js" defer></script>
+    <title></title>
+
 </head>
+
 <body>
+    
+    <div class="container">
+        <h1>Reading List</h1>
+        <table class="_table">
+            <thead>
+                <tr>
+                    <th>번호</th>
+                    <th>책제목</th>
+                    <th>출판사/작가</th>
+                    <th>분야</th>
+                    <th>완독여부</th>
+                    <th>비고</th>
 
-  <div class="container">
-    <h1>Reading List</h1>
-      <table class="rl_table">
-        <tbody>
-          <tr>
-            <th>번호</th>
-            <th>책제목</th>
-            <th>출판사/작가</th>
-            <th>분야</th>
-            <th>완독여부</th>
-            <th>비고</th>
-          </tr>
+                    <!-- 추가 js -->
+                    <th width="30px">
+                        <div class="action_container">
+                            <button class="success" onclick="add_tr('table_body')">추가
+                            </button>
+                        </div>
+                    </th>
+                </tr>
 
-          <tr>
-            <td data-th="rl_number">
-              1
-            </td>
-            <td data-th="rl_table">
-              책제목을 입력하세요
-            </td>
-            <td data-th="rl_publisher">
-              하늘공장/지은이
-            </td>
-            <td data-th="rl_field">
-              자기계발
-            </td>
-            <td data-th="rl_read">
-              O(2022-11-20)
-            </td>
-            <td data-th="rl_etc">
-              추천
-            </td>
-          </tr>
 
-          <tr>
-            <td data-th="rl_number">
-              2
-            </td>
-            <td data-th="rl_table">
-              책제목을 입력하세요
-            </td>
-            <td data-th="rl_publisher">
-              하늘공장/지은이
-            </td>
-            <td data-th="rl_field">
-              자기계발
-            </td>
-            <td data-th="rl_read">
-              O(2022-11-20)
-            </td>
-            <td data-th="rl_etc">
-              추천
-            </td>
-          </tr>
-
-          <tr>
-            <td data-th="rl_number">
-              3
-            </td>
-            <td data-th="rl_table">
-              책제목을 입력하세요
-            </td>
-            <td data-th="rl_publisher">
-              하늘공장/지은이
-            </td>
-            <td data-th="rl_field">
-              자기계발
-            </td>
-            <td data-th="rl_read">
-              O(2022-11-20)
-            </td>
-            <td data-th="rl_etc">
-              추천
-            </td>
-          </tr>
-
-          <tr>
-            <td data-th="rl_number">
-              4
-            </td>
-            <td data-th="rl_table">
-              책제목을 입력하세요
-            </td>
-            <td data-th="rl_publisher">
-              하늘공장/지은이
-            </td>
-            <td data-th="rl_field">
-              자기계발
-            </td>
-            <td data-th="rl_read">
-              O(2022-11-20)
-            </td>
-            <td data-th="rl_etc">
-              추천
-            </td>
-          </tr>
-
-       
-        </tbody>
-      </table>
-      <h3>+ &nbsp&nbsp add</h3>
+            </thead>
+            <tbody id="table_body">
+                <tr>
+                    <td data-th="rl_number">
+                        1
+                    </td>
+                    <td data-th="rl_table">
+                        <input type="text" class="form_control" placeholder="예) 세이노의 가르침">
+                    </td>
+                    <td data-th="rl_publisher">
+                        <input type="text" class="form_control" placeholder="예) 데이원/세이노">
+                    </td>
+                    <td data-th="rl_field">
+                        <input type="text" class="form_control" placeholder="예) 자기계발">
+                    </td>
+                    <td data-th="rl_read">
+                        <input type="text" class="form_control" placeholder="예) O 23/03/28">
+                    </td>
+                    <td data-th="rl_etc">
+                        <input type="text" class="form_control" placeholder="예) 추천받은 책">
+                    </td>
+                    <!-- 삭제 button  -->
+                    <td>
+                        <div class="action_container">
+                            <button class="danger" onclick="remove_tr(this)">삭제
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <script type="text/javascript" src="readingList.js"></script>
 </body>
+
 </html>

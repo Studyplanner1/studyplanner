@@ -1,21 +1,14 @@
-* {font-family: 'Open Sans', sans-serif;}
 
-/* Basic Styling */
-body {
-background: #EEF1FF;
-width: 1920px;
-margin: 0 auto;
-height: 1080px;
+* {
+  padding: 0;
+  margin: 0;
 }
 
-.container {
-  display: block;
-  text-align: center;
-  width: 1500px;
-  /* border: 1px solid #000; */
-  position: relative;
-  left:0; right:0; 
-  margin: 100px auto;
+body {
+  background: #EEF1FF;
+  width: 1920px;
+  margin: 0 auto;
+  height: 1080px;
 }
 
 h1 {
@@ -23,160 +16,89 @@ h1 {
   font-size: 2.4em;
   color: black;
   background: AAC4FF;
+  background: #EEF1FF;
+  padding-bottom: 50px;
 }
 
+.container {
+  /* max-width: 900px;
+  width: 100%;
+  background-color: #fff;
+  margin: auto;
+  padding: 10px;
+  border-radius: 5px;
+  overflow-x: auto; */
+  left: 0;
+  right: 0;
+  margin: 50px auto;
+  background: #fff;
+  width: 1000px;
 
-.rl_table {
-  margin: auto; 
-  width: 800px;
-  border: 1px solid #000;
+
+
+}
+
+._table {
+  width: 100%;
   border-collapse: collapse;
-  left:0; right:0; 
-  margin-left:auto; margin-right:auto;   
-  position: absolute;
-  
- 
+
 }
 
-
-.rl_table tr:first-child {
-  border-top: none;
-  background: #9BBAFF;
-  color: black;
+._table :is(th, td) {
+  /*:is 반복 줄임*/
+  border: 1px solid #0002;
+  padding: 8px 10px;
 }
 
-.rl_table tr {
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  background-color: white;
-  height: 40px;
-} 
-
-.rl_table tr:nth-child(odd):not(:first-child) {
-  background-color: #E9EBF5;
-}
-
-
-.rl_table td:first-child {
-  margin-top: .5em;
-  /* 번호 하나씩 증가할 수 있게 function 넣기*/
-}
-
-
-.rl_table td:last-child {
-  margin-bottom: .5em;
-  /* 비고부분 */
-}
-
-
-.rl_table th, .rl_table td {
-  text-align: center;
- 
-}
-
-
-.rl_table {
+.form_control {
+  border: 1px solid #0002;
+  background-color: transparent;
+  /* outline: none; */
+  padding: 8px 12px;
+  font-family: 0.8em;
+  width: 100%;
   color: #333;
-  border-radius: 10px;
-  overflow: hidden;
-  /* background: red; */
-  margin-top: 70px;
+  /* transition: 0.3s ease-in-out; */
 }
 
-.rl_table tr {
-  border-color: black;
+.form_control::placeholder {
+  color: inherit;
+  opacity: 0.4;
 }
 
-.rl_table th, .rl_table td {
-  padding: .5em 1em;
-  
-} 
-
-h3 {
-  /* display: inline-block;
-  position: relative;
-  /* text-align: center; */
-
-
-
-
-
-  background: #D5E2FF;
-        width: 110px;
-        border-radius: 50px;
-        height: 25px;
-        padding: 15px;
-        margin-left: 350px;
-        font-weight: 700;
-        
-}
-/*
-
-
-@media screen and (max-width: 601px) {
-  .r1_table tr:nth-child(2) {
-    border-top: none;
-  }
-}
-@media screen and (min-width: 600px) {
-  .r1_table tr:hover:not(:first-child) {
-    background-color: #d8e7f3;
-  }
-  .r1_table td:before {
-    display: none;
-  }
-  .r1_table th,
-  .r1_table td {
-    display: table-cell;
-    padding: .25em .5em;
-  }
-  .r1_table th:first-child,
-  .r1_table td:first-child {
-    padding-left: 0;
-  }
-  .r1_table th:last-child,
-  .r1_table td:last-child {
-    padding-right: 0;
-  }
-  .r1_table th,
-  .r1_table td {
-    padding: 1em !important;
-  }
+.form_control:is(:focus, :hover) {
+  /* box-shadow: inset 0 1px 6px #0002; */
 }
 
-
-
-
-
-
-
-
-
-h3:before {
-  content: "\25C0";
-  position: absolute;
-  left: -50px;
-  -webkit-animation: leftRight 2s linear infinite;
-  animation: leftRight 2s linear infinite;
+.success {
+  background-color: #24b96f !important;
 }
 
+.danger {
+  background-color: #ff5722 !important;
+}
 
-h3:after {
-  content: "\25b6";
-  position: absolute;
-  right: -50px;
-  -webkit-animation: leftRight 2s linear infinite reverse;
-  animation: leftRight 2s linear infinite reverse;
+.action_container {
+  display: inline-flex;
 }
-@-webkit-keyframes leftRight {
-  0%    { -webkit-transform: translateX(0)}
-  25%   { -webkit-transform: translateX(-10px)}
-  75%   { -webkit-transform: translateX(10px)}
-  100%  { -webkit-transform: translateX(0)}
+
+.action_container>* {
+  border: none;
+  outline: none;
+  color: #fff;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px 14px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
 }
-@keyframes leftRight {
-  0%    { transform: translateX(0)}
-  25%   { transform: translateX(-10px)}
-  75%   { transform: translateX(10px)}
-  100%  { transform: translateX(0)}
-} */ 
+
+.action_container>*+* {
+  border-left: 1px solid #fff5;
+}
+
+.action_container>*:hover {
+  border-color: transparent;
+  box-shadow: 0 2px 10px #0004;
+  border-radius: 2px;
+}
