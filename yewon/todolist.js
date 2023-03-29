@@ -31,7 +31,7 @@ function addTodo() {
 
     $tdAddLi.addEventListener('click', finishTodo);
 
-    // 우측에 수정 버튼 추가 (추가예정)
+    // 우측에 수정 버튼 추가
     let $tdAddLiAmendBtn = document.createElement('button');
     $tdAddLiAmendBtn.setAttribute('class', 'td-list-amend-btn');
     $tdAddLiAmendBtn.innerHTML = '<i class="fa-solid fa-pen"></i>'; // 펜 아이콘
@@ -88,18 +88,23 @@ function amendTodo(e) {
 }
 
 // 할일 클릭하면 취소선 그어지는 함수
+const BEFORE_FINISH = 'td-list-li-text';
+const AFTER_FINISH = 'td-list-li-text finish-todo';
+const LI_BEFORE_FINISH = 'td-list-li clearfix';
+const LI_AFTER_FINISH = 'td-list-li clearfix li-finish-todo';
+
 function finishTodo(e) {
     $tdFinishTarget = e.target;
-    const BEFORE_FINISH = 'td-list-li-text';
-    const AFTER_FINISH = 'td-list-li-text finish-todo';
     if ($tdFinishTarget.className === BEFORE_FINISH) {
         // 취소선 그은 후에는 span 태그에 finish-todo 클래스 추가 + 맨 밑으로
         $tdFinishTarget.setAttribute('class', AFTER_FINISH);
         $tdFinishTarget.style.textDecoration = 'line-through';
+        $tdFinishTarget.parentElement.setAttribute('class', LI_AFTER_FINISH);
     } else if ($tdFinishTarget.className === AFTER_FINISH) {
         // 취소선 그은 후 다시 클릭하면 finish-todo 클래스 삭제 + 맨 위로
         $tdFinishTarget.setAttribute('class', BEFORE_FINISH);
         $tdFinishTarget.style.textDecoration = 'none'
+        $tdFinishTarget.parentElement.setAttribute('class', LI_BEFORE_FINISH);
     }
 }
 
