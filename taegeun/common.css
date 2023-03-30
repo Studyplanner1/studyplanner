@@ -1,6 +1,6 @@
 @import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
 @import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 /* common style */
 * {
     box-sizing: border-box;
@@ -8,8 +8,9 @@
 
 /* body 선택자에 기본 폰트크기와 글꼴을 넣어주세요 */
 body {
-    font-size: 18px;
-    font-family: "Avenir","Apple SD Gothic Neo";
+    font-size: 11px;
+    font-family: 'Jua', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 /* 추가 reset사항이 있으면 아래에 적어주세요. */

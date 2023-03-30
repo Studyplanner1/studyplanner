@@ -1,56 +1,37 @@
 body {
-    width: 1500px;
-    margin: 100px auto;
-    background: #f5f5f5;
+    width: 1000px;
+    /* margin: 0 auto; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(237, 235, 247);
 }
-/*
-.SC_mainImg {
-    background: gray;
-    width: 1500px;
-    height: 300px;
-    margin-top: 70px;
-    margin: 70px auto 30px;
-}
-
-h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    text-align: center;
-
-}
-*/
 
 .CD_boxWrap {
     display: flex;
-    background-color: rgb(220, 220, 220);
-    border-radius: 40px;
-    padding: 40px;
+    background-color: rgb(236, 238, 242);
+    /* background-color: rgb(143, 150, 158); */
+    border-radius: 10px;
+    padding: 20px;
     justify-content: space-between;
     /* box-shadow: 2px 2px 3px 3px rgb(200, 200, 200); */
+    box-shadow: 0px 4px 6px 6px rgba(202, 202, 202, 0.3);
 }
 
 /* 왼쪽박스 영역 */
 .CD_boxWrap .CD_boxLeft {
     /* background: gray; */
-    width: 30%;
+    width: 30.5%;
     display: flex;
     flex-direction: column;
-    box-shadow: 3px 3px 5px 5px rgb(200, 200, 200);
+    position: relative;
+
 }
 
 .CD_boxWrap .CD_boxLeft {
     background: white;
-    border-radius: 15px;
-}
-.CD_SMCalendar.CD_SMMonth{
-    display: flex;
-    color: aqua;
-}
-.CD_boxLeft .CD_SMCalendar {
-    width: 93%;
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto;
+    border-radius: 10px;
 }
 
 .CD_boxLeft .CD_selectCalendar {
@@ -62,55 +43,49 @@ h1 {
 }
 
 /* smallCalendar영역 */
-.CD_SmallDays {
+.CD_boxLeft .CD_SMCalendar {
+    width: 100%;
+    height: 330px;
     display: flex;
-    flex-wrap: wrap;
-
+    flex-direction: column;
+    margin: 10px auto;
+    text-align: center;
+    border-bottom: 2px solid rgb(237, 235, 247);
 }
 
-.CD_SmallDays div {
+.CD_SMDays {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+
+}
+.CD_SMtoday{
+    border-radius: 30px;
+    background: rgb(120, 76, 213);
+    color: white;
+    font-weight: 600;
+}
+
+.CD_SMDays .CD_SMDay {
     width: 14.28%;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 4em;
+    height: 40px;
     font-size: 1.1em;
     /* border: 1px solid #000; */
 }
-.CD_SMCalendar.CD_SMMonth div{
-    color: #afffba;
+
+#CD_SMMonth {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding: 0 25px;
+    font-size: 1.5em;
 }
 
-.CD_boxLeft .CD_selectCalendar a {
-    /* color: aliceblue; */
-    background: black;
-    width: 300px;
-    text-align: center;
-    margin: 15px 20px 0px;
-    padding: 10px;
-    border-radius: 50rem;
-    /* font-size: 0.95em; */
-}
-
-.CD_boxLeft .CD_selectCalendar a:nth-of-type(1) {
-    background: rgb(153, 153, 153);
-}
-
-.CD_boxLeft .CD_selectCalendar a:nth-of-type(2) {
-    background: rgb(153, 153, 153);
-}
-
-.CD_boxLeft .CD_selectCalendar a:nth-of-type(3) {
-    background: rgb(153, 153, 153);
-}
-
-.CD_boxLeft .CD_selectCalendar a:nth-of-type(4) {
-    background: rgb(153, 153, 153);
-}
-
-.CD_boxLeft .CD_selectCalendar a:nth-of-type(5) {
-    background: rgb(153, 153, 153);
-    color: white;
+#CD_SMMonth i {
+    cursor: pointer;
 }
 
 
@@ -118,23 +93,217 @@ h1 {
 .CD_boxWrap .CD_boxRight {
     background: white;
     width: 68%;
-    border-radius: 15px;
+    /* height: 680px; */
+    /* overflow: hidden; */
+    border-radius: 10px;
     padding: 30px;
-    box-shadow: 3px 3px 5px 5px rgb(200, 200, 200);
+
 }
 
+
+/* 하단 일정 추가하기 */
+/* Event추가 표시 */
+.events {
+    height: 400px;
+}
+.events .event{
+    margin-top: 7px;
+    padding: 10px;
+    align-items: center;
+    display: flex;
+    background: rgb(120, 76, 213);
+    height: 40px;
+    border-radius: 5px;
+    font-size: 1.2em;
+    color: white;
+    cursor: pointer;
+    font-weight: 600;
+}
+.events .event:hover {
+    background: rgb(237, 235, 247);
+    color: rgb(120, 76, 213);
+    transition: background-color 0.5s;
+   
+}
+
+.CD_addCalendarContainer .event-date {
+    margin-left: 10px;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.events .no-event{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: 500;
+    color:rgb(225, 221, 249);
+}
+.addCircle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 8px;
+    background-color: rgb(255, 196, 221)
+}
+
+.CD_addCalendarContainer {
+    width: 92%;
+    margin: 0 auto;
+}
+
+.CD_addCalendarContainer .event-day {
+    /* text-align: center; */
+    margin: 18px 0 10px;
+    font-size: 1.2em;
+    color: rgb(120, 76, 213);
+    font-weight: 600;
+}
+
+.CD_addCalendar .addSchedule {
+    margin-right: 7px;
+    font-weight: 600;
+}
+
+/* 일정 추가 버튼 영역 */
+.CD_add-event-wrapper {
+    position: absolute;
+    bottom: 70px;
+    left: 50%;
+    width: 92%;
+    overflow: hidden;
+    border-radius: 5px;
+    transform: translateX(-50%);
+    transition : 0.5s;
+    max-height: 0px;
+    background: rgb(237, 235, 247);
+    /* z-index: 1000; */
+
+}
+.CD_add-event-wrapper.active2 {
+    max-height: 300px;
+}
+
+.add-event-header {
+    width: 100%;
+    display: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+    font-size: 1.4em;
+    background: rgb(120, 76, 213);
+    color: white;
+}
+
+.add-event-header .close {
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.add-event-header .close:hover {
+    color: rgb(181, 178, 196);
+}
+
+.CD_add-event-body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 12px;
+}
+
+.CD_add-event-body .CD_add-event-input {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.CD_add-event-body .CD_add-event-input input {
+    width: 100%;
+    height: 90%;
+    outline: none;
+    border: none;
+    padding: 0 10px;
+    font-weight: 400;
+    background-color:#f5f5f5;
+    font-size: 1.4em;
+    border-radius: 5px;
+}
+.CD_add-event-body .CD_add-event-input input::placeholder{
+    color: #a4a4a4;
+    font-weight: 300;
+}
+.CD_add-event-body .CD_add-event-input input:focus{
+    box-shadow: 2px 4px 5px 1px rgba(181, 178, 196, 0.3);
+}
+
+.CD_add-event-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px 17px;
+}
+
+.CD_add-event-btn{
+    height: 30px;
+    font-size: 1em;
+    font-weight: 700;
+    outline: none;
+    border: none;
+    color: #fff;
+    background-color: rgba(120, 76, 213, 0.8);
+    border-radius: 5px;
+    cursor: pointer;
+    padding : 0px 10px
+}
+.CD_add-event-btn:hover{
+    color: black;
+    background-color: rgb(255, 255, 255);
+}
+
+/* 더하기 영역 */
+
+.CD_add-event{
+    position: absolute;
+    bottom: 35px;
+    left: 18px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(120, 76, 213, 0.5);
+    font-size: 1.5em;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid rgba(120, 76, 213, 0.5);
+}
+.CD_add-event:hover{
+    color: rgba(120, 76, 213, 1);
+    border: 2px solid rgba(120, 76, 213, 1);
+}
+
+
+/* 오른쪽박스 상단 년도 선택 section*/
 .CD_selectYear {
     display: flex;
     /* background: gray; */
     justify-content: space-between;
     align-items: center;
-    padding: 70px 25px;
+    padding: 20px 20px;
     /* background: rgb(139, 139, 139); */
-    color: rgb(153, 153, 153);
-
+    color: rgb(120, 76, 213);
 }
 
-/* 오른쪽박스 상단 년도 선택 section*/
 .CD_leftselectYear {
     display: flex;
     justify-content: space-between;
@@ -145,6 +314,7 @@ h1 {
 /* 오른쪽박스 상단 년도 left section */
 .CD_selectYear h2 {
     font-size: 3em;
+    font-weight: 600;
     padding-top: 6px;
     text-align: center;
 
@@ -152,9 +322,9 @@ h1 {
 
 .CD_selectYear h3 {
     font-size: 1.5em;
-    padding-top: 14px;
+    padding-top: 6px;
     text-align: center;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 .CD_selectYear .fas {
@@ -195,16 +365,15 @@ h1 {
 }
 
 .CD_weekdays {
-    font-size: 1.8em;
+    font-size: 1.5em;
     font-weight: 400;
     display: flex;
-    border-bottom: 4px solid rgb(120, 120, 120);
+    border-bottom: 3px solid rgba(120, 76, 213, 0.3);
     padding-bottom: 5px;
-    color: rgb(120, 120, 120);
+    color: black;
 }
 
 .CD_weekdays div {
-
     height: 100%;
     text-align: right;
 }
@@ -215,65 +384,91 @@ h1 {
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
-
 }
 
 .CD_days div {
-    font-size: 1.8em;
+    font-size: 1.5em;
     height: 5em;
     text-align: right;
     transition: background-color 0.3s;
-    border: 1px solid #f5f5f5;
+    border: 1px solid rgba(237, 235, 247, 0.5);
     cursor: pointer;
 }
 
 /* 날짜 hover */
-.CD_days div:hover:not(.prev-date, .next-date) {
-    background-color: rgb(240, 240, 240);
+.CD_days div:hover:not(.prev-date, .next-date, .active) {
+    background-color: rgb(237, 235, 247);
 }
 
 .prev-date,
-.next-date {
+.next-date,
+.SMprev-date,
+.SMnext-date {
     color: #b3b3b3;
 }
 
 .today {
-    color: red;
+    color: rgb(120, 76, 213);
     font-weight: bold;
 }
 
 /* 이벤트 추가 후 */
+.CD_mainCalendar{
+    position: relative;
+    height: 570px;
+}
+
+
+.CD_mainCalendar .CD_days .active{
+    position: relative;
+    color: white;
+
+    font-weight: 700;
+    background: rgb(120, 76, 213);
+    border-radius: 5px;
+    
+}
+.CD_mainCalendar .CD_days .active::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+}
+
 .CD_mainCalendar .CD_days .event {
     position: relative;
 }
-
+/* 이벤트 추가 후 */
 .CD_mainCalendar .CD_days .event::after {
     content: "";
     position: absolute;
     bottom: 10%;
     left: 50%;
     width: 85%;
-    height: 10px;
-    background-color: #ffcff9;
+    height: 5px;
+    background-color: rgb(255, 222, 236);
     transform: translateX(-50%);
-    border-radius: 30px;
+    border-radius: 20px;
 }
 
 /* 버튼 검색 영역 */
 .CD_mainCalendar .CD_goto-today {
     width: 100%;
-    height: 50px;
+    /* height: 30px; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 5px;
-    margin: 30px 0 10px;
+    position: absolute;
 }
 
 .CD_goto-today .goto input,
 .CD_goto-today .goto button,
 .CD_goto-today .today-btn {
-    font-size: 1.5em;
+    font-size: 1.3em;
 }
 
 .CD_goto-today .goto {
@@ -287,28 +482,27 @@ h1 {
 
 .CD_goto-today .goto input {
     width: 100%;
-    height: 60px;
+    height: 30px;
     border: none;
     border-radius: 5px;
     padding: 0 20px;
-    background-color: rgb(220, 220, 220);
-    color: rgb(50, 50, 50);
+    background-color: rgb(237, 235, 247);
 
 }
 
 .CD_goto-today button {
-    padding: 15px;
+    height: 30px;
     border: 1px solid #000;
     border: none;
     border-radius: 5px;
     background-color: transparent;
     cursor: pointer;
-    color: white;
-    background-color: rgb(153, 153, 153);
-    margin-left: 10px;
+    color: rgb(120, 76, 213);
+    background-color: rgb(237, 235, 247);
+    margin-left: 5px;
 }
 
 .CD_goto-today button:hover {
-    color: rgb(100, 100, 100);
-    background-color: rgb(200, 200, 200);
+    color: rgb(237, 235, 247);
+    background-color: rgb(120, 76, 213);
 }
