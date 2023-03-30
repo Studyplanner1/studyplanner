@@ -179,13 +179,20 @@ btnStop.onclick = function() {
     startFlag= false;
 }
 btnReset.onclick = function() {
+    clearTimeout(t);
     runTime.textContent = "00:00:00";
     seconds = 0; minutes = 0; hours = 0; 
     timRecord.textContent="";
-
+    startFlag= false;
     // $saving.classList.toggle('savingToCD');
-    return;
+    
 }
+
+
+
+
+
+
 
 import * as tutorial from './tutorial.js';
 
