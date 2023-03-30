@@ -14,7 +14,7 @@ header a.gnb-btn {
 header #gnb {
     background: #fff;
     color: #9b9b9b;
-    font-size: 22px;
+    font-size: 25px;
     padding: 70px 20px;
     box-sizing: border-box;
 
@@ -61,6 +61,7 @@ header #gnb a.gnb-close {
 }
 header #gnb a.gnb-close:hover {
     color: rgb(120,76,213);
+   
 }
 header #gnb ul { 
     height: fit-content;
@@ -99,6 +100,7 @@ header #gnb ul a:hover {
     animation-duration: 0.5s;
     animation-fill-mode: both;
     color: #fff;
+    width: 320px;
 }
 /* 햄버거 버튼 눌렀을 때 */
 header #gnb.on {

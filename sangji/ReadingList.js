@@ -32,10 +32,17 @@ function remove_tr(This) { //행 삭제
 
 }
 
-let count = [1,2,3,4,5,6,7,8,9,10,11,12,13];
-count.pop();
+let table = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+// 삭제할 행의 인덱스
+let rowIndex = 1;
 
-var newcount= count.pop();
+// 행 삭제
+table.splice(rowIndex, 1);
+
+// 결과 출력
+console.log(table);
+
+
 
 
   
