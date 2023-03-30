@@ -5,10 +5,9 @@
     box-sizing: border-box;
 }
 
-/* body 선택자에 기본 폰트크기와 글꼴을 넣어주세요 */
+/* 공통 body */
 body {
-    font-size: 18px;
-    font-family: 'Jua', sans-serif;
+    background-color: rgb(237, 235, 247);   
 }
 
 /* 추가 reset 사항이 있으면 아래에 적어주세요. */
