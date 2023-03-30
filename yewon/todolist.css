@@ -1,20 +1,19 @@
 @import url('sidemenu.css');
 
 body {
-    background-color: #EEF1FF;
+    background-color: rgb(237, 235, 247);
 }
 
 #td-wrap {
-    /* background-color: gray; */
     display: flex;
+    font-size: 20px;
 }
 
 #td-box {
-    background-color: #fff;
+    background-color: rgb(247, 248, 251);
     width: 1000px;
     height: fit-content;
     margin: 70px auto 30px;
-    /* border: 4px dashed #8D8DB9; */
     border-radius: 50px;
     overflow: hidden;
     box-shadow: 0 0 30px rgba(0, 0, 0, 30%);
@@ -23,7 +22,7 @@ body {
 
 /* TODO LIST 제목 시작 */
 #td-box .td-title {
-    background-color: #8D8DB9;
+    background-color: rgb(120, 76, 213);
     padding: 40px;
     text-align: center;
     font-family: 'Roboto Condensed', sans-serif;
@@ -37,28 +36,32 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    padding: 10px;
-    margin-top: 10px;
+    align-items: center;
+    padding: 30px;
 }
 
 /* 입력 */
 #td-box .td-input .td-inputtext {
-    padding: 10px;
+    background-color: rgb(247, 248, 251);
+    padding: 15px;
     width: 80%;
     margin-right: 18px;
     border-style: none;
-    font-size: 20px;
+    font-size: 25px;
     font-family: inherit;
 }
+
 @keyframes input-todo {
     0% {
         outline-color: #fff;
     }
+
     100% {
         background-color: rgb(231, 226, 255);
-        outline-color: rgb(120,76,213);
-    }   
+        outline-color: rgb(120, 76, 213);
+    }
 }
+
 #td-box .td-input .td-inputtext:focus {
     animation-name: input-todo;
     animation-duration: 0.5s;
@@ -67,17 +70,21 @@ body {
 
 /* 버튼들 */
 #td-wrap #td-box button {
-    background-color: #fff;
+    background-color: rgb(237, 235, 247);
     width: 40px;
     height: 40px;
     margin: 0 5px;
     border-style: none;
-    border-radius: 9px;
+    border-radius: 50%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+}
+
+#td-wrap #td-box button.td-del-btn {
+    border-radius: 10px;
 }
 
 #td-wrap #td-box button:hover {
@@ -100,7 +107,7 @@ body {
 
 #td-box .td-main .td-list {
     background-color: #fff;
-    ;
+    padding: 20px;
     height: fit-content;
     /* 리스트 목록의 최소 높이 */
     min-height: 500px;
@@ -110,30 +117,42 @@ body {
 }
 
 #td-box .td-main .td-list li {
-    background-color: #EFEDFF;
+    background-color: rgb(237, 235, 247);
     width: 89%;
-    padding: 5px 20px;
+    padding: 10px 20px;
     margin: 10px;
     border-radius: 10px;
     display: flex;
     align-items: center;
 }
 
+@keyframes finish-todo {
+    0% {}
+
+    100% {
+        transform: rotateX(360deg);
+        -webkit-transform: rotateX(360deg);
+        opacity: 40%;
+    }
+}
+
 #td-box .td-main .td-list li.li-finish-todo {
-    opacity: 50%;
     order: 10;
+    animation-name: finish-todo;
+    animation-duration: 1s;
+    animation-fill-mode: both;
 }
 
 #td-box .td-main .td-list li span,
 #td-box .td-main .td-list li input {
-    background-color: #EFEDFF;
+    background-color: rgb(237, 235, 247);
     flex-grow: 9;
     border-style: none;
     font-family: inherit;
 }
 
 #td-box .td-main .td-list li input:focus {
-    background-color: #EFEDFF;
+    background-color: rgb(237, 235, 247);
     outline: none;
     font-size: 23px;
 }
@@ -142,15 +161,12 @@ body {
     color: #8f8f8f;
 }
 
-
 #td-box .td-main .td-list li button {
     font-size: 30px;
     justify-self: flex-end;
 }
-
-/* #td-box .td-main .td-list */
 /* 리스트 목록 끝 */
-/* 모두 삭제 버튼 + 추가기능 시작 */
+/* footer 시작 */
 #td-box .td-footer {
     width: 100%;
     height: 100px;
