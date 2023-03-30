@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="siteicon.ico">
+    <link rel="apple-touch-icon" href="siteicon.ico">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
     <!-- <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Gowun+Batang&display=swap" rel="stylesheet"> -->
@@ -17,13 +20,33 @@
     <link rel="stylesheet" href="./common.css">
     <link rel="stylesheet" href="./todolist.css">
     <script src="./todolist.js" defer></script>
+    <script src="./sidemenu.js" defer></script>
+
 
     <title>TODO LIST</title>
 
 </head>
 
 <body>
+
     <div id="td-wrap">
+        <header>
+            <a href="#" class="gnb-btn"><i class="fa-solid fa-bars"></i></a>
+            <nav id="gnb">
+                <a class="gnb-logo" href="#">
+                    ⏰ 중앙 플래너 ⏰
+                </a>
+                <a class="gnb-close" href="#">
+                    <i class="fa-solid fa-angle-left"></i>
+                </a>
+                <ul>
+                    <li><a href="#"><i class="fa-regular fa-calendar"></i><span>CALENDAR</span></a></li>
+                    <li><a href="#"><i class="fa-regular fa-square-check"></i><span>TODO LIST</span></a></li>
+                    <li><a href="#"><i class="fa-regular fa-hourglass-half"></i><span>TIMER</span></a></li>
+                    <li><a href="#"><i class="fa-regular fa-bookmark"></i><span>READING LIST</span></a></li>
+                </ul>
+            </nav>
+        </header>
         <div id="td-box">
             <!-- TODO LIST 제목 -->
             <section class="td-title">
@@ -38,15 +61,16 @@
             <div class="td-main">
                 <ul class="td-list">
                     <!-- CSS 확인용 li -->
-                    <!-- <li class="td-list-li clearfix">
+                    <li class="td-list-li clearfix">
                         <span class="td-list-li-text">할일 리스트!</span>
                         <button><i class="fa-solid fa-pen"></i></button>
                         <button><i class="fa-solid fa-x"></i></button>
-                    </li> -->
+                    </li>
                 </ul>
             </div>
             <!-- 모두 삭제 버튼 + 추가기능 -->
             <div class="td-footer">
+                <span class="goal">오늘의 남은 할일: <span class="goal-num"></span></span>
                 <button class="td-del-btn">모두 삭제<i class="fa-solid fa-trash-can"></i></button>
             </div>
         </div>
