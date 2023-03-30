@@ -31,10 +31,7 @@ const eventsArr = [{
         day: 29,
         month: 3,
         year: 2023,
-        events: [{
-                title: "Event 1 lorem ipsum",
-                time: "10:00AM",
-            },
+        events: [
             {
                 title: "Event2",
                 time: "11:00",
@@ -58,7 +55,6 @@ const eventsArr = [{
 ];
 // const eventsArr = [];
 // getEvents();
-console.log(eventsArr);
 
 
 // 날짜 추가 함수
@@ -110,7 +106,7 @@ function initCalendar() {
             if (event) {
                 days += `<div class="CD_day today event active">${i}</div>`;
             } else {
-                days += `<div class="CD_day today">${i}</div>`;
+                days += `<div class="CD_day today active">${i}</div>`;
             }
         } else {
             if (event) {
@@ -164,8 +160,8 @@ $next.addEventListener("click", nextMonth);
 // });
 
 $addEventBtn.addEventListener("click", (e) => {
-    console.log("클릭됨", e.target);
     $addEventContainer.classList.toggle('active2');
+    $addEventBtn.classList.toggle('btnActive');
     // $boxLeft.classList.toggle('black');
     // black 수정해야됨 z-index
 });
@@ -176,8 +172,18 @@ $addEventCloseBtn.addEventListener("click", () => {
 document.addEventListener("click", (e) => {
     if (e.target !== $addEventBtn && !$addEventContainer.contains(e.target)) {
         $addEventContainer.classList.remove('active2');
+        $addEventBtn.classList.remove('btnActive');
     }
 })
+
+// today 버튼 클릭 시 오늘로 돌아오기
+const $clickBtn = document.querySelector('.today-btn');
+$clickBtn.addEventListener("click",()=>{
+    today=new Date();
+    month = today.getMonth();
+    year= today.getFullYear();
+    initCalendar();
+});
 
 //입력 양식
 //시작 시간
@@ -202,6 +208,9 @@ $addEventTo.addEventListener("input", (e) => {
         $addEventTo.value = $addEventTo.value.slice(0, 5);
     }
 });
+
+
+
 
 
 
@@ -301,11 +310,12 @@ function updateEvents(date) {
 
 
 // 일정 추가 함수
+// 일정 추가하기 누를 시
 $addEventSubmit.addEventListener("click", () => {
     const eventTitle = $addEventTitle.value;
     const eventTimeFrom = $addEventFrom.value;
-    const eventTimeTo = $addEventTo.value;
-
+    const eventTimeTo = $addEventTo.value;  
+    const $addInput = document.querySelector('.event-name');
     if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
         alert("입력칸을 전부 채워주세요!");
     }
@@ -320,7 +330,11 @@ $addEventSubmit.addEventListener("click", () => {
         timeToArr[0] > 23 ||
         timeToArr[1] > 59
     ) {
-        alert("시간에 ':'를 입력해주세요");
+        //잘못입력 시 칸 비우기
+        $addEventTitle.value='';
+        $addEventFrom.value='';
+        $addEventTo.value=''; 
+        alert("올바른 시간을 입력해주세요");
         return;
     }
     const timeFrom = convertTime(eventTimeFrom);
@@ -330,8 +344,7 @@ $addEventSubmit.addEventListener("click", () => {
         title: eventTitle,
         time: timeFrom + " - " + timeTo,
     };
-    console.log(newEvent);
-    console.log(activeDay);
+
     let eventAdded = false;
     if (eventsArr.length > 0) {
         eventsArr.forEach((item) => {
@@ -361,11 +374,14 @@ $addEventSubmit.addEventListener("click", () => {
     $addEventFrom.value = "";
     $addEventTo.value = "";
     updateEvents(activeDay);
-    //select active day and add event class if not added
-    const activeDayEl = document.querySelector(".day.active");
+    //일정 추가하면 핑크
+    const activeDayEl = document.querySelector(".CD_day.active");
     if (!activeDayEl.classList.contains("event")) {
         activeDayEl.classList.add("event");
     }
+    //완료되면 창닫기
+    alert('일정이 추가되었습니다.')
+    $addEventContainer.classList.remove('active2');
 });
 
 function convertTime(time) {

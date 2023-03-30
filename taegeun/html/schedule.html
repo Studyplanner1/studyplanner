@@ -10,70 +10,28 @@
     <script src="https://kit.fontawesome.com/625f8d18ca.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/schedule.css">
     <script type="module" src="../js/schedule.js" defer></script>
-    <script type="module" src="../js/addEvent.js" defer></script>
 </head>
 
-<body>
-
-    <div class="CD_boxWrap">
+<body class="">
+    
+    <div class="CD_boxWrap">  
         <!-- 왼쪽영역 -->
         <section class="CD_boxLeft">
-            <div class="CD_boxLeftWrap">
-                <div class="CD_SMCalendar">
-                    <div id="CD_SMMonth">
-                        <i class="fas fa-angle-left SMprev"></i>
-                        <span class="CD_SMcurrentMonth"></span>
-                        <i class="fas fa-angle-right SMnext"></i>
-
+          
+                <div class="CD_boxLeftWrap ">
+                    <div class="CD_SMCalendar">
+                        <div id="CD_SMMonth">
+                            <i class="fas fa-angle-left SMprev"></i>
+                            <span class="CD_SMcurrentMonth"></span>
+                            <i class="fas fa-angle-right SMnext"></i>
+                        </div>
+                        <div class="CD_SMDays">
+                        </div>
                     </div>
-                    <div class="CD_SMDays">
-                        <!-- <div class="CD_SMDay SMprev-date">26</div>
-                        <div class="CD_SMDay SMprev-date">27</div>
-                        <div class="CD_SMDay SMprev-date">28</div>
-                        <div class="CD_SMDay">1</div>
-                        <div class="CD_SMDay">2</div>
-                        <div class="CD_SMDay">3</div>
-                        <div class="CD_SMDay">4</div>
-                        <div class="CD_SMDay">5</div>
-                        <div class="CD_SMDay">6</div>
-                        <div class="CD_SMDay">7</div>
-                        <div class="CD_SMDay">8</div>
-                        <div class="CD_SMDay">9</div>
-                        <div class="CD_SMDay">10</div>
-                        <div class="CD_SMDay">11</div>
-                        <div class="CD_SMDay">12</div>
-                        <div class="CD_SMDay">13</div>
-                        <div class="CD_SMDay">14</div>
-                        <div class="CD_SMDay">15</div>
-                        <div class="CD_SMDay">16</div>
-                        <div class="CD_SMDay">17</div>
-                        <div class="CD_SMDay">18</div>
-                        <div class="CD_SMDay">19</div>
-                        <div class="CD_SMDay">20</div>
-                        <div class="CD_SMDay">21</div>
-                        <div class="CD_SMDay">22</div>
-                        <div class="CD_SMDay event">23</div>
-                        <div class="CD_SMDay">24</div>
-                        <div class="CD_SMDay">25</div>
-                        <div class="CD_SMDay">26</div>
-                        <div class="CD_SMDay">27</div>
-                        <div class="CD_SMDay today active">28</div>
-                        <div class="CDCD_SMDay_day">29</div>
-                        <div class="CD_SMDay">30</div>
-                        <div class="CD_SMDay">30</div>
-                        <div class="CD_SMDay next-date">1</div>
-                        <div class="CD_SMDay next-date">2</div>
-                        <div class="CD_SMDay next-date">3</div>
-                        <div class="CD_SMDay next-date">4</div>
-                        <div class="CD_SMDay next-date">5</div>
-                        <div class="CD_SMDay next-date">6</div>
-                        <div class="CD_SMDay next-date">7</div>
-                        <div class="CD_SMDay next-date">8</div> -->
+                    <div class="CD_addCalendarContainer">
+                        <div class="event-day"></div>
+                        <div class="events"></div>
                     </div>
-                </div>
-                <div class="CD_addCalendarContainer">
-                    <div class="event-day">Today Event</div>
-                    <div class="events"></div>
                 </div>
                 <div class="CD_add-event-wrapper">
                     <div class="add-event-header">
@@ -82,23 +40,21 @@
                     </div>
                     <div class="CD_add-event-body">
                         <div class="CD_add-event-input">
-                            <input type="text" placeholder="Event Name" class="event-name">
+                            <input type="text" placeholder="일정을 입력해주세요." class="event-name">
                         </div>
                         <div class="CD_add-event-input">
-                            <input type="text" placeholder="Event Time From" class="event-time-from">
+                            <input type="text" placeholder="시간을 입력해주세요" class="event-time-from">
                         </div>
                         <div class="CD_add-event-input">
-                            <input type="text" placeholder="Event Time To" class="event-time-to">
+                            <input type="text" placeholder="상세정보를 입력해주세요" class="event-time-to">
                         </div>
                     </div>
                     <div class="CD_add-event-footer">
                         <button class="CD_add-event-btn">ADD EVENT</button>
                     </div>
                 </div>
-                <button class="CD_add-event">
-                    <i class="fas fa-plus"></i>
-                </button>
-            </div>
+                <button class="CD_add-event">+</button>
+               
         </section>
 
         <!-- 오른쪽영역 -->
@@ -111,10 +67,6 @@
                     <h3 class="CD_currentYear"></h3>
                 </div>
                 <i class="fas fa-angle-right next"></i>
-                <!-- <div class="CD_rightselectYear">
-                    <button class="selectDay">DAY</button>
-                    <button class="selectWeek">WEEK</button>
-                </div> -->
             </div>
             <div class=CD_mainCalendar>
                 <div class="CD_weekdays">
@@ -127,48 +79,6 @@
                     <div>Sat</div>
                 </div>
                 <div class="CD_days">
-                    <!-- <div class="CD_day prev-date">26</div>
-                    <div class="CD_day prev-date">27</div>
-                    <div class="CD_day prev-date">28</div>
-                    <div class="CD_day">1</div>
-                    <div class="CD_day">2</div>
-                    <div class="CD_day">3</div>
-                    <div class="CD_day">4</div>
-                    <div class="CD_day">5</div>
-                    <div class="CD_day">6</div>
-                    <div class="CD_day">7</div>
-                    <div class="CD_day">8</div>
-                    <div class="CD_day">9</div>
-                    <div class="CD_day">10</div>
-                    <div class="CD_day">11</div>
-                    <div class="CD_day">12</div>
-                    <div class="CD_day">13</div>
-                    <div class="CD_day">14</div>
-                    <div class="CD_day">15</div>
-                    <div class="CD_day">16</div>
-                    <div class="CD_day">17</div>
-                    <div class="CD_day">18</div>
-                    <div class="CD_day">19</div>
-                    <div class="CD_day">20</div>
-                    <div class="CD_day">21</div>
-                    <div class="CD_day">22</div>
-                    <div class="CD_day event">23</div>
-                    <div class="CD_day">24</div>
-                    <div class="CD_day">25</div>
-                    <div class="CD_day">26</div>
-                    <div class="CD_day">27</div>
-                    <div class="CD_day today active">28</div>
-                    <div class="CD_day">29</div>
-                    <div class="CD_day">30</div>
-                    <div class="CD_day">30</div>
-                    <div class="CD_day next-date">1</div>
-                    <div class="CD_day next-date">2</div>
-                    <div class="CD_day next-date">3</div>
-                    <div class="CD_day next-date">4</div>
-                    <div class="CD_day next-date">5</div>
-                    <div class="CD_day next-date">6</div>
-                    <div class="CD_day next-date">7</div>
-                    <div class="CD_day next-date">8</div> -->
                 </div>
             </div>
             <div class="CD_goto-today">
@@ -177,9 +87,6 @@
                     <button class="goto-btn">go</button>
                     <button class="today-btn">today</button>
                 </div>
-
-
-
             </div>
         </section>
     </div>
