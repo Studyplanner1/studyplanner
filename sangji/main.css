@@ -1,0 +1,121 @@
+@import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css');
+
+/* common style */
+* {
+    box-sizing: border-box;
+    font-family: 'Jua', sans-serif;
+}
+
+/* body 선택자에 기본 폰트크기와 글꼴을 넣어주세요 */
+body {
+    font-size: 18px;
+    font-family: 'Jua', sans-serif;
+    background: rgb(247,248,251);
+    width: 1920px;
+}
+
+.container{
+    background:rgb(237,235,247); 
+    width: 1500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 500px;
+    border-radius: 30px;
+}
+ .container .h1box{
+    /* background: olivedrab; */
+    width: 1000px;
+    text-align: center;
+    margin: 0 auto;
+   
+ }
+ 
+ .container .h1box h1{
+    font-size: 3.5em;
+    margin-top: 20px;
+  
+
+ }
+
+ .container .logininfo{
+    /* background: orange; */
+    width: 1000px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+
+ .container .logininfo .logininput input{
+    flex: 1;
+    height: 40px;
+    padding: 0 4px;
+    border: 0;
+    background: none;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    width: 300px;
+}
+
+.container .logininfo .loginbutton{
+    /* border-bottom: 1px solid #000;
+    padding-bottom: 40px; */
+    /* position: relative; */
+
+    display: flex;
+    justify-content: center;
+}
+
+.container .logininfo .line{
+    border: 1px solid black;
+    margin: 20px auto;
+    width: 500px;
+}
+
+
+.container .logininfo .sublogin{
+    /* background: tan; */
+    display: flex;
+    justify-content: center;
+}
+
+.container .logininfo .sublogin .join{
+    border-left: 3px solid #000;
+    padding: 0 20px;
+    
+}
+.container .logininfo .sublogin .join:hover{
+    background: rgb(120,76,213);
+    color: rgb(237,235,247);
+}
+
+.container .logininfo .sublogin .forgetpw{
+    border-left: 3px solid #000;
+    padding: 0 20px;
+}
+.container .logininfo .sublogin .forgetpw:hover{
+    background: rgb(120,76,213);
+    color: rgb(237,235,247);
+}
+
+.container .logininfo .loginbutton button{
+background: rgb(237,235,247);
+border-radius: 20px;
+
+border: 1px solid rgb(120,76,213);
+padding: 10px;
+
+width: 100px;
+color: rgb(120,76,213);
+/* margin: 0 auto; */
+/* display: block; */
+ 
+}
+
+.container .logininfo .loginbutton button:hover{
+    background: rgb(120,76,213);
+    color: rgb(237,235,247);
+}
