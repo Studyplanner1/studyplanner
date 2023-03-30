@@ -6,18 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="timercss.css">
+    <link rel="stylesheet" href="/chaewon/css/timercss.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-
-    <script type="module" src="timer.js" defer></script>
+    <script type="module" src="/chaewon/js/timer.js" defer></script>
 
 </head>
 
 <body>
+
+    <div class="wrap">
+        <p style="color: #fff;">바로 넘어가려면 화면 아무곳이나 클릭해주세요 </p>
+        <!-- tutorials -->
+           <div class="tutorial1" id="tutorial1">
+                <p>tutorial 공부시간을 측정 해보세요  </p>
+                <p class="tutorial" style="text-decoration: underline;">다음으로 넘어가기</p>
+            </div>
+           <!-- <div class="tutorial2">
+                <p>tutorial 설명 </p>
+            </div> -->
+     </div>   
+
+
     <div class="timTimeSection">
 
         <div class="timNowTime">
-            <h2 id="clock"></h2>
+            <h1>TIMER</h1>
+            <div><h2 id="clock"></h2></div>
         </div>
 
 
@@ -32,7 +46,7 @@
                     <input type="date" id="endday" class="displayBlock">
                     <button id="ddaybtn" class="displayBlock">설정</button>
                     <!-- 아이콘으로 설정 만들어주기  설정 아이콘 누르면 설정 태그가 나타나도록 -->
-                    <span id="timsettingIcon"><i class=" fa fa-cog"></i></span>
+                    <span id="timsettingIcon">    <i class=" fa fa-cog"></i></span>
                 </div>
 
                 <div>

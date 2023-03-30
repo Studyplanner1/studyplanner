@@ -2,44 +2,91 @@
 @import url(common.css);
 
 
+
 body {
-    width: 1500px;
-    background: #EEF1FF;
+    width: 1980px;
+    background-color: rgb(247,248,251);;
     /* border: 1px solid #7415e0; */
     margin: 0 auto;
+    position: relative;
 
 }
+.timTimeSection{
+    position: relative;
+    width: 1500px;
+    height: 990px;
+    margin: 0 auto;
+    margin-top: 70px;
+    background-color: #fff;
+    border-radius: 10%;
+    /* border: 1px solid #000; */
+}
+
 .timNowTime {
     /* border: 1px solid #0cc945; */
     width: 70%;
+    height: 150px; 
+    align-items: center;
     margin: 0 auto;
-    margin-top: 70px;
+    margin-top: 40px;
+    padding: 1%;
+    top: 23%;
     
+}
+.timNowTime h1{
+    /* border: 1px solid #000; */
+    font-size: 3em;
+    width: fit-content;
+    margin: 0 auto;
+    
+}
+
+.timNowTime > div {
+    /* border: 1px solid #000; */
+    width: 10%;
+    text-align: center;
+    font-size: 15px;
+    
+    margin: 0 auto;
+
+
 
 }
 /* today, now  전체 테이블*/
 .timTimeSection #clock {
+    /* border: 1px solid #ec2121; */
     width: fit-content;
-    border: 1px solid #ec2121;
-    margin-left: 2%;
+    margin-left: 3%;
     margin-bottom: 0;
+
+    
 
 }
 .timTimeSection .timTimeSet {
-    width: 70%;
     /* border: 1px solid #000; */
+    width: 1000px;
     margin: 0 auto;
     display: flex;
+   
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    
+    
 }
 
  
 .timTimeSection .timTimeSet .timSection {
-    border: 1px solid #ccc;     
+    
     width: 30%;
     height: 300px;
-    background: #D5E2FF;
+    border-radius: 10%;
+    background-color: rgb(237,235,247);
+    border: 1px solid rgb(120,76,213) ;   
     margin: 0 auto;
-    
+ 
 } 
 /* today, now, 전체 테이블  끝*/
 
@@ -47,22 +94,24 @@ body {
 /* DDAY 설정 및 차감 */
 .displayBlock {
     display: none;
+    
 }
 
 .timesetting {
     /* border: 1px solid #000;    */
     text-align: right;
-    padding: 2px 1px;
+    padding: 10px 8px;
     height: 4dvh;
 }
 
 #ddaybtn {
     background-color:  #fff;
-    border: 1px solid #6aafe6;
-    border-radius: 10%;
+    border: 1px solid rgb(120,76,213) ;
+    border-radius: 15%;
 }
 #ddaybtn:hover {
-background-color: #CCC;
+background-color: rgb(120,76,213);
+color: #fff;
 
 }
 .timTimeSection .timTimeSet .timDday .timDdayTitle {
@@ -106,11 +155,13 @@ background-color: #CCC;
     /* border: 1px solid #000; */
     margin: 0 5%;
     background-color:  #fff;
-    border: 1px solid #6aafe6;
-    border-radius: 10%;
+    border: 1px solid rgb(120,76,213) ;
+    border-radius: 15%;
 }
-.timTimeSection .timTimeSet .timTimeUp.btnMin .tim25min:hover {
-    background-color: #ccc;
+.timTimeSection .timTimeSet .timTimeUp .btnMin button:hover {
+    background-color:rgb(120,76,213) ;
+    color: #fff;
+
 }
 
 /* 스톱워치  끝*/
@@ -140,6 +191,18 @@ background-color: #CCC;
     text-align: center;
 }
 
+.LearningTimebtn button {
+    background-color:  #fff;
+    border: 1px solid rgb(120,76,213) ;
+    border-radius: 15%;
+
+}
+.LearningTimebtn button:hover {
+    background-color:rgb(120,76,213) ;
+    color: #fff;
+}
+
+
 .savingToCD {
     display: none;
 
@@ -147,3 +210,53 @@ background-color: #CCC;
 #timRecord {
     padding-bottom: 3%;
 }
+
+
+.wrap {
+    width: 100%;
+    height: 1080px; 
+    /* tutorial 컬러 시용시.  */
+      background-color: rgb(20,20,20,0.8);
+ 
+      position: absolute;
+      z-index: 10;
+      
+  
+}
+
+.invisible{
+    display: none;
+}
+
+#tutorial1 {
+    width: 300px;
+    height: 300px;
+    border: 3px dashed red;
+    padding: 10px;
+    
+    background: url(../img/tutorial_timer3.png) no-repeat center;
+    z-index: 100;
+    position: absolute;
+    top: 350px;
+    right: 500px;
+    
+
+}
+.tutorial1 p:last-child {
+    text-align: right;
+}
+
+
+
+.tutorial2 {
+    width: 200px;
+    height: 100px;
+    border: 3px dashed red;
+    background-color: #fff;
+    z-index: 100;
+
+} 
+
+
+
+

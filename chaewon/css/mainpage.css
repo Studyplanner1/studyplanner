@@ -1,0 +1,56 @@
+@import url(common.css);
+
+body {
+    width: 1980px;
+    background-color: rgb(247,248,251);
+   
+}
+
+
+/* main table  */
+.wrap .mainTable {
+    /* border: 1px solid #000; */
+    width: 1500px;
+    margin: 0 auto;
+    margin-top: 70px;
+    background-color: #fff;
+    border-radius: 10%;
+
+}
+/* 이동메뉴 전체 박스  */
+.wrap .mainTable .boxes {
+    /* border: 1px solid #000; */
+    width: 1000px;
+    padding: 5%;
+    margin: 0 auto; 
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+/* 이동메뉴 cal, todo, reading, timer */
+.wrap .mainTable .boxes .box {
+    width: 350px;
+    height: 350px;
+    margin: auto; 
+    border: 1px solid rgb(120,76,213) ;
+    background-color: rgb(237,235,247);
+    margin: 10px;
+    border-radius: 10%;
+   
+    
+}
+.wrap .mainTable .boxes .box:hover {
+    color: #fff;
+    background-color:  rgb(120,76,213);
+    
+}
+.wrap .mainTable .boxes .box > p {
+    /* border: 1px solid #000; */
+    margin-top: 45%;
+    text-align: center; 
+    font-size: 2em;
+}
+
+
+
+
