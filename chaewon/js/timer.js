@@ -12,8 +12,8 @@ function getClock() {
     const seconds = String(now.getSeconds()).padStart(2,"0");
     //console.log(year);
 
-    clock.innerText = `TODAY: ${year}년${month}월${date}일 
-                                ${hour}:${minutes}:${seconds}`;
+    clock.innerText = `${year}년${month}월${date}일 
+                     ${hour}:${minutes}:${seconds}`;
 }
 getClock();
 setInterval(getClock, 1000);
@@ -68,10 +68,10 @@ function timeout() {
     sec--;
     if(sec < 0) {
         min--;
-        sec = 59; 
         if(min < 0 ){
             min = 0;
             sec= 0;
+           
            // 
 
             return;
@@ -85,6 +85,7 @@ function sub() {
     $restTime.textContent = (min > 9 ? min : "0" + min) 
                             +" : "+ (sec> 9 ? sec : "0" + sec);
     time();
+
 }
 
 let Flag =  false; 
@@ -100,7 +101,7 @@ tim25min.onclick = function() {
     sec = 60;
     min= 24;
     time();
-    
+
 }   
 
 //5분
@@ -114,9 +115,10 @@ tim5min.onclick= function() {
 
 //1분
 tim1min.onclick = function() {
-    sec = 60;
-    min=0;
+    sec = 10;
+    min = 0;
     time();
+   
     
 }
 
@@ -184,3 +186,25 @@ btnReset.onclick = function() {
     // $saving.classList.toggle('savingToCD');
     return;
 }
+
+import * as tutorial from './tutorial.js';
+
+
+// tutorial
+let clickFlag = false; 
+tutorial.$wrap.addEventListener('click', function(e) {
+   
+    tutorial.$wrap.setAttribute('class', 'invisible');
+    
+        clickFlag = !clickFlag;
+ });
+ 
+ tutorial. $tutorial.addEventListener('click', function(e) {
+    
+    tutorial.$tutorial1.setAttribute('class', 'invisible');
+     
+         clickFlag = !clickFlag;
+         e.stopPropagation();
+  });
+ 
+ 
