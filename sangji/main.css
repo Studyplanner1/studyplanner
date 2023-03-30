@@ -21,7 +21,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 300px;
+    height: 500px;
     border-radius: 30px;
 }
  .container .h1box{
@@ -33,7 +33,7 @@ body {
  }
  
  .container .h1box h1{
-    font-size: 2.0em;
+    font-size: 3.5em;
     margin-top: 20px;
   
 
@@ -50,33 +50,69 @@ body {
 
  .container .logininfo .logininput input{
     flex: 1;
-    height: 35px;
+    height: 40px;
     padding: 0 4px;
     border: 0;
     background: none;
     text-align: center;
     margin: 0 auto;
-    margin-bottom: 10px;
-    width: 200px;
+    margin-bottom: 15px;
+    width: 300px;
 }
 
 .container .logininfo .loginbutton{
-    background: #000;
+    /* border-bottom: 1px solid #000;
+    padding-bottom: 40px; */
     /* position: relative; */
-    
 
+    display: flex;
+    justify-content: center;
+}
+
+.container .logininfo .line{
+    border: 1px solid black;
+    margin: 20px auto;
+    width: 500px;
+}
+
+
+.container .logininfo .sublogin{
+    /* background: tan; */
+    display: flex;
+    justify-content: center;
+}
+
+.container .logininfo .sublogin .join{
+    border-left: 3px solid #000;
+    padding: 0 20px;
+    
+}
+.container .logininfo .sublogin .join:hover{
+    background: rgb(120,76,213);
+    color: rgb(237,235,247);
+}
+
+.container .logininfo .sublogin .forgetpw{
+    border-left: 3px solid #000;
+    padding: 0 20px;
+}
+.container .logininfo .sublogin .forgetpw:hover{
+    background: rgb(120,76,213);
+    color: rgb(237,235,247);
 }
 
 .container .logininfo .loginbutton button{
 background: rgb(237,235,247);
 border-radius: 20px;
+
 border: 1px solid rgb(120,76,213);
 padding: 10px;
-/* margin: 0 auto; */
+
 width: 100px;
 color: rgb(120,76,213);
-/* align-items: center;
-justify-content: center; */
+/* margin: 0 auto; */
+/* display: block; */
+ 
 }
 
 .container .logininfo .loginbutton button:hover{

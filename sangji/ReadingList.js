@@ -1,7 +1,11 @@
 function add_tr(table_id) { //행 추가
   let table_body = document.getElementById(table_id);
-  let first_tr = table_body.firstElementChild;
-  let tr_clone = first_tr.cloneNode(true); //*1)복제된 node 반환
+  let last_tr = table_body.lastElementChild;
+  let tr_clone = last_tr.cloneNode(true); //*1)복제된 node 반환
+
+  let rlNum = +tr_clone.firstElementChild.textContent;
+  console.log(rlNum);
+  tr_clone.firstElementChild.textContent = rlNum + 1;
 
   table_body.append(tr_clone);
   clean_first_tr(table_body.firstElementChild);
@@ -25,7 +29,16 @@ function remove_tr(This) { //행 삭제
   } else {
     This.closest('tr').remove(); //삭제
   }
+
 }
+
+let count = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+count.pop();
+
+var newcount= count.pop();
+
+
+  
 
 //순번 증가, 감소
 // var count = 0;
@@ -40,20 +53,20 @@ function remove_tr(This) { //행 삭제
 //   document.querySelector(".delete").innerText=count;
 // }
 
-function count(type)  {
-  // 결과를 표시할 element
-  const resultElement = document.getElementById('rl_number');
+// function count(type)  {
+//   // 결과를 표시할 element
+//   const resultElement = document.getElementById('rl_number');
   
-  // 현재 화면에 표시된 값
-  let number = resultElement.innerText;
+//   // 현재 화면에 표시된 값
+//   let number = resultElement.innerText;
   
-  // 더하기/빼기
-  if(type === 'plus') {
-    number = parseInt(number) + 1;
-  }else if(type === 'minus')  {
-    number = parseInt(number) - 1;
-  }
+//   // 더하기/빼기
+//   if(type === 'add') {
+//     number = parseInt(number) + 1;
+//   }else if(type === 'delete')  {
+//     number = parseInt(number) - 1;
+//   }
   
-  // 결과 출력
-  resultElement.innerText = number;
-}
+//   // 결과 출력
+//   resultElement.innerText = number;
+// }
