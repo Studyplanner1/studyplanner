@@ -5,36 +5,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="siteicon.ico">
-    <link rel="apple-touch-icon" href="siteicon.ico">
-
+    
+    <!-- 아이콘 fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Concert+One&family=Gowun+Batang&display=swap" rel="stylesheet"> -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Rowdies:wght@300&family=Yeseva+One&display=swap"
-        rel="stylesheet">
+    <!-- font (제목/본문)-->
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&family=Rowdies:wght@300&family=Yeseva+One&display=swap" rel="stylesheet">
 
+    <!-- css -->
     <link rel="stylesheet" href="./common.css">
     <link rel="stylesheet" href="./todolist.css">
-    <script src="./todolist.js" defer></script>
-    <script src="./sidemenu.js" defer></script>
 
+    <!-- js -->
+    <script src="./todolist.js" defer></script>
+    <script src="/sidemenu/sidemenu.js" defer></script>
 
     <title>TODO LIST</title>
 
 </head>
 
 <body>
-
     <div id="td-wrap">
+        <!-- 사이드바 -->
         <header>
             <a href="#" class="gnb-btn"><i class="fa-solid fa-bars"></i></a>
             <nav id="gnb">
                 <a class="gnb-logo" href="#">
-                    ⏰ 중앙 플래너 ⏰
+                    ⏰ STUDY PLANNER ⏰
                 </a>
                 <a class="gnb-close" href="#">
                     <i class="fa-solid fa-angle-left"></i>
@@ -47,6 +45,7 @@
                 </ul>
             </nav>
         </header>
+        <!-- 본문 -->
         <div id="td-box">
             <!-- TODO LIST 제목 -->
             <section class="td-title">
@@ -57,20 +56,17 @@
                 <input type="text" class="td-inputtext" placeholder="오늘의 할일 작성!">
                 <button class="td-inputbtn"><i class="fa-solid fa-plus"></i></button>
             </div>
-            <!-- 리스트 목록 -->
+            <!-- 할일 목록 -->
             <div class="td-main">
                 <ul class="td-list">
-                    <!-- CSS 확인용 li -->
-                    <li class="td-list-li clearfix">
-                        <span class="td-list-li-text">할일 리스트!</span>
-                        <button><i class="fa-solid fa-pen"></i></button>
-                        <button><i class="fa-solid fa-x"></i></button>
-                    </li>
                 </ul>
             </div>
-            <!-- 모두 삭제 버튼 + 추가기능 -->
+            <!-- 퍼센트바 + 모두 삭제 버튼 -->
             <div class="td-footer">
-                <span class="goal">오늘의 남은 할일: <span class="goal-num"></span></span>
+                <div class="bar-container">
+                    <div id="Content-bar" class="bar"><img class="bar-inner" src="source/Kirby-zzz.gif" alt="커비"></div>
+                </div>
+                <div class="td-food"><img class="food-inner" src="source/Kirby_star.gif" alt="커비밥"></div>
                 <button class="td-del-btn">모두 삭제<i class="fa-solid fa-trash-can"></i></button>
             </div>
         </div>
