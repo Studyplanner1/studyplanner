@@ -12,13 +12,39 @@
     <link rel="stylesheet"
         href="https://fonts.google.com/noto/specimen/Noto+Sans+KR?preview.text=%EC%8A%A4%EC%BC%80%EC%A4%84%EB%9F%AC&preview.text_type=custom&subset=korean&noto.script=Kore">
     <link rel="stylesheet" href="readingList.css">
+    <!-- <link rel="stylesheet" href="common.css"> -->
     <!-- <script type="module" src="readingList.js" defer></script> -->
+    <link rel="stylesheet" href="readingListsidebar.css">
+    <link rel="stylesheet" href="/yewon/sidemenu.css">
+    <script src="/yewon/sidemenu.js" defer></script>
 
     <title>ReadingList</title>
 
 </head>
 
 <body>
+<div class="wrap">
+    <header>
+        <a href="#" class="gnb-btn"><i class="fa-solid fa-bars"></i></a>
+        <nav id="gnb">
+            <a class="gnb-logo" href="#">
+                ⏰ STUDY PLANNER ⏰
+            </a>
+            <a class="gnb-close" href="#">
+                <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <ul>
+                <li><a href="#"><i class="fa-regular fa-calendar"></i><span>CALENDAR</span></a></li>
+                <li><a href="#"><i class="fa-regular fa-square-check"></i><span>TODO LIST</span></a></li>
+                <li><a href="#"><i class="fa-regular fa-hourglass-half"></i><span>TIMER</span></a></li>
+                <li><a href="#"><i class="fa-regular fa-bookmark"></i><span>READING LIST</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+
+
 
     <div class="container">
         <div class="h1box">
@@ -82,6 +108,7 @@
             </tbody>
         </table>
     </div>
+</div>
     <script type="text/javascript" src="readingList.js"></script>
 </body>
 
