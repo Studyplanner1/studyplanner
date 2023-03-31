@@ -3,6 +3,7 @@ const $tutorial = document.querySelector('.tutorial');
 const $tutorial1 = document.querySelector('.tutorial1');
 
 const $tutorial2 = document.querySelector('.tutorial2');
+const $tutorial3 = document.querySelector('.tutorial3');
 
 let clickFlag = false; 
 
@@ -32,4 +33,4 @@ $tutorial.addEventListener('click', function(e) {
     // //     $wrap.classList.toggle('wrap');
     // // }
 
-    export{$wrap,$tutorial,$tutorial1}
+    export{$wrap,$tutorial,$tutorial1,$tutorial2,$tutorial3}
