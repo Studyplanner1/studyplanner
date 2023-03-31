@@ -217,7 +217,7 @@ color: #fff;
 .wrap {
     width: 1920px;
     height: 1080px;
-    border: 1px solid red; 
+    /* border: 1px solid red;  */
     /* tutorial 컬러 시용시.  */
       background-color: rgb(20,20,20,0.8);
       overflow: hidden;
