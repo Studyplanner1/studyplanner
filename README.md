@@ -3,7 +3,7 @@
 
 ### 열공하는 사람들을 위한 웹 형식 스터디플래너
 
-![로고](/source/Study_planner-title.png)
+![로고](/final/source/Study_planner-title.png)
 <br/><br/>  
 
 ### 💻프로젝트 개요
@@ -12,7 +12,7 @@
 <br/><br/>
 
 ### 🖥 개발 환경
-![개발환경](/source/Stack.png)
+![개발환경](/final/source/Stack.png)
 <br/><br/>
 
 
