@@ -187,9 +187,9 @@ color: #fff;
 .timTimeSection .timTimeSet .timLearningTime .LearningTimebtn button {
      margin: 0 10px;
 
-}.timTimeSection .timTimeSet .timLearningTime > p {
+}.timTimeSection .timTimeSet .timLearningTime .todayRecord{
     /* border: 1px solid #000; */
-    padding-top: 8px;
+    padding-top: 10px;
     text-align: center;
 }
 
@@ -203,14 +203,21 @@ color: #fff;
     background-color:rgb(120,76,213) ;
     color: #fff;
 }
+.timerRecord {
+    display: flex;
+    justify-content: center;
+}
 
-
-.savingToCD {
-    display: none;
+#kirby {
+    width: 50px;
+    height: 50px;
+    /* border: 1px solid #000; */
+    
 
 }
 #timRecord {
-    padding-bottom: 6px;
+    /* border: 1px solid #000; */
+    padding-top: 15px;
 }
 
 /* tutorial -css 시작  */

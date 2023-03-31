@@ -131,6 +131,7 @@ const btnStop = document.querySelector('.LearningTimebtnStop');
 const btnReset = document.querySelector('.LearningTimebtnReset');
 const runTime = document.querySelector('.timRunning');
 const timRecord = document.querySelector('#timRecord');
+const $timerRecord =document.querySelector('.timerRecord');
 let seconds = 0;
 let minutes = 0;
 let hours = 0;
@@ -174,6 +175,7 @@ function timer() {
 btnStart.onclick = timer;
 btnStop.onclick = function() {
     clearTimeout(t);
+    $timerRecord.classList.toggle('invisible');
     timRecord.textContent = runTime.textContent;   
     // $saving.classList.toggle('savingToCD');
     startFlag= false;
@@ -182,7 +184,7 @@ btnReset.onclick = function() {
     clearTimeout(t);
     runTime.textContent = "00:00:00";
     seconds = 0; minutes = 0; hours = 0; 
-    timRecord.textContent="";
+    $timerRecord.textContent="";
     startFlag= false;
     // $saving.classList.toggle('savingToCD');
     
