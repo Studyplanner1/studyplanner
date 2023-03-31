@@ -7,31 +7,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/chaewon/css/timercss.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+   
+    <link rel="stylesheet" href="/sidemenu/sidemenu.css">
     <script type="module" src="/chaewon/js/timer.js" defer></script>
+    <script src="/sidemenu/sidemenu.js" defer></script>
+
 
 </head>
 
-<body>
 
-    <div class="wrap">
-        <p style="color: #fff;">바로 넘어가려면 화면 아무곳이나 클릭해주세요 </p>
-        <!-- tutorials -->
-           <div class="tutorial1" id="tutorial1">
-                <p>tutorial 공부시간을 측정 해보세요  </p>
+<body>
+    <header>
+        <a href="#" class="gnb-btn"><i class="fa-solid fa-bars"></i></a>
+        <nav id="gnb">
+            <a class="gnb-logo" href="#">
+                ⏰ 중앙 플래너 ⏰
+            </a>
+            <a class="gnb-close" href="#">
+                <i class="fa-solid fa-angle-left"></i>
+            </a>
+            <ul>
+                <li><a href="#"><i class="fa-regular fa-calendar"></i><span>CALENDAR</span></a></li>
+                <li><a href="#"><i class="fa-regular fa-square-check"></i><span>TODO LIST</span></a></li>
+                <li><a href="#"><i class="fa-regular fa-hourglass-half"></i><span>TIMER</span></a></li>
+                <li><a href="#"><i class="fa-regular fa-bookmark"></i><span>READING LIST</span></a></li>
+            </ul>
+        </nav>
+        <div class="wrap">
+            <p>바로 넘어가려면 화면 아무곳이나 클릭해주세요 </p>
+            <!-- tutorials -->
+            <div class="tutorial1 invisible" id="tutorial1">
+                <p>tutorial 공부시간을 측정 해보세요 </p>
                 <p class="tutorial" style="text-decoration: underline;">다음으로 넘어가기</p>
             </div>
-           <!-- <div class="tutorial2">
-                <p>tutorial 설명 </p>
-            </div> -->
-     </div>   
+            <div class="tutorial2 invisible" id="tutorial2">
+                <p>설정을 눌러 d-day를 설정해주세요</p>
+                <p class="tutorial" style="text-decoration: underline;">다음으로 넘어가기</p>
+            </div> 
+            <div class="tutorial3" id="tutorial3">
+                <p>여기를 눌러<br>다른 카테고리로</p> 
+
+                <p class="tutorial" style="text-decoration: underline;">다음으로 넘어가기</p>
+            </div> 
+        </div>
+
+
+    </header>
+
 
 
     <div class="timTimeSection">
 
         <div class="timNowTime">
             <h1>TIMER</h1>
-            <div><h2 id="clock"></h2></div>
+            <div>
+                <h2 id="clock"></h2>
+            </div>
         </div>
 
 
@@ -46,7 +79,7 @@
                     <input type="date" id="endday" class="displayBlock">
                     <button id="ddaybtn" class="displayBlock">설정</button>
                     <!-- 아이콘으로 설정 만들어주기  설정 아이콘 누르면 설정 태그가 나타나도록 -->
-                    <span id="timsettingIcon">    <i class=" fa fa-cog"></i></span>
+                    <span id="timsettingIcon"> <i class=" fa fa-cog"></i></span>
                 </div>
 
                 <div>
@@ -91,9 +124,9 @@
                     <button class="LearningTimebtnReset">reset</button>
                 </div>
                 <p>
-                    오늘의 공부시간     
+                    오늘의 공부시간
                 </p>
-                <p > <span id="timRecord"></span> <span></span></p>
+                <p> <span id="timRecord"></span> <span></span></p>
                 <!-- 캘린더에 추가하기 메뉴 예정. -->
                 <button class="savingToCD">캘린더에 저장</button>
 

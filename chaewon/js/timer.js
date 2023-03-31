@@ -199,19 +199,40 @@ import * as tutorial from './tutorial.js';
 
 // tutorial
 let clickFlag = false; 
+
 tutorial.$wrap.addEventListener('click', function(e) {
    
     tutorial.$wrap.setAttribute('class', 'invisible');
     
         clickFlag = !clickFlag;
  });
+
+tutorial.$tutorial3.addEventListener('click', function(e) {
+    
+    tutorial.$tutorial3.setAttribute('class', 'invisible');
+    tutorial.$tutorial2.classList.toggle('invisible');
+         clickFlag = !clickFlag;
+         e.stopPropagation();
+  });
+
+
  
- tutorial. $tutorial.addEventListener('click', function(e) {
+ tutorial.$tutorial2.addEventListener('click', function(e) {
+    
+    tutorial.$tutorial2.setAttribute('class', 'invisible');
+    tutorial.$tutorial1.classList.toggle('invisible');
+     
+         clickFlag = !clickFlag;
+         e.stopPropagation();
+  });
+ 
+
+ tutorial.$tutorial1.addEventListener('click', function(e) {
     
     tutorial.$tutorial1.setAttribute('class', 'invisible');
      
          clickFlag = !clickFlag;
-         e.stopPropagation();
+        //  e.stopPropagation();
   });
  
  
