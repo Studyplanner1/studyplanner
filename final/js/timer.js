@@ -12,7 +12,7 @@ function getClock() {
     const seconds = String(now.getSeconds()).padStart(2,"0");
     //console.log(year);
 
-    clock.innerText = `${year}년${month}월${date}일 
+    clock.innerHTML = `${year}년${month}월${date}일<br>
                      ${hour}:${minutes}:${seconds}`;
 }
 getClock();
