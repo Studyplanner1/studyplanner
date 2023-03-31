@@ -1,11 +1,11 @@
 
 /* @import url('https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css'); */
 
-* {
+/* * {
   padding: 0;
   margin: 0;
 
-}
+} */
 
 body {
   background: #EEF1FF;
@@ -14,6 +14,10 @@ body {
   height: 1080px;
 
 
+}
+.wrap{
+  display: flex;
+  font-size: 20px;
 }
 /* body 시작 */
 
@@ -59,7 +63,7 @@ h1 {
 
 .container ._table :is(th, td) {
   /*:is 반복 줄임*/
-  border: 1px solid #0002; /**ssssssssssssssssssssssssss*/
+  border: 1px solid #0002; 
   padding: 8px 10px;
 
   
@@ -67,8 +71,8 @@ h1 {
 
 
 .container ._table tr th{
-  background: rgb(237,235,247)!important;
-  font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    background: rgb(237,235,247);
 }
 
 .container ._table .form_control{
@@ -89,7 +93,8 @@ h1 {
   /* transition: 0.3s ease-in-out; */
   align-items: center;
 justify-content: center; 
- 
+
+
 }
 
 .container ._table .table_body tr .form_control ::placeholder {
@@ -104,6 +109,8 @@ justify-content: center;
 
 .container ._table .add {
   background-color: rgb(237,235,247);
+
+
 }
 
 

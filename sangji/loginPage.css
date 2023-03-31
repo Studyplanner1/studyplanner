@@ -29,12 +29,14 @@ body {
     width: 1000px;
     text-align: center;
     margin: 0 auto;
+    
    
  }
  
  .container .h1box h1{
     font-size: 3.5em;
     margin-top: 20px;
+
   
 
  }
