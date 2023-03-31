@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Calendar</title>
     <link rel="stylesheet" href="/final/css/common-t.css">
     <script src="https://kit.fontawesome.com/625f8d18ca.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
     <link rel="stylesheet" href="/final/css/schedule.css">
     <link rel="stylesheet" href="../css/sidemenu.css">
     <script type="module" src="../js/schedule.js" defer></script>
-    <script src="../js/sidemenu.js" defer></script> 
+    <script src="../js/sidemenu.js" defer></script>
 
 </head>
 
@@ -28,18 +28,22 @@
                     <i class="fa-solid fa-angle-left"></i>
                 </a>
                 <ul>
-                    <li><a href="/final/html/schedule.html"><i class="fa-regular fa-calendar"></i><span>CALENDAR</span></a></li>
-                    <li><a href="/final/html/todolist.html"><i class="fa-regular fa-square-check"></i><span>TODO LIST</span></a></li>
-                    <li><a href="/final/html/timer.html"><i class="fa-regular fa-hourglass-half"></i><span>TIMER</span></a></li>
-                    <li><a href="/final/html/readingList.html"><i class="fa-regular fa-bookmark"></i><span>READING LIST</span></a></li>
+                    <li><a href="/final/html/schedule.html"><i
+                                class="fa-regular fa-calendar"></i><span>CALENDAR</span></a></li>
+                    <li><a href="/final/html/todolist.html"><i class="fa-regular fa-square-check"></i><span>TODO
+                                LIST</span></a></li>
+                    <li><a href="/final/html/timer.html"><i
+                                class="fa-regular fa-hourglass-half"></i><span>TIMER</span></a></li>
+                    <li><a href="/final/html/readingList.html"><i class="fa-regular fa-bookmark"></i><span>READING
+                                LIST</span></a></li>
                 </ul>
             </nav>
         </header>
-    
-    <div class="CD_boxWrap">  
-        <!-- 왼쪽영역 -->
-        <section class="CD_boxLeft">
-          
+
+        <div class="CD_boxWrap">
+            <!-- 왼쪽영역 -->
+            <section class="CD_boxLeft">
+
                 <div class="CD_boxLeftWrap ">
                     <div class="CD_SMCalendar">
                         <div id="CD_SMMonth">
@@ -76,42 +80,42 @@
                     </div>
                 </div>
                 <button class="CD_add-event">+</button>
-               
-        </section>
 
-        <!-- 오른쪽영역 -->
-        <section class="CD_boxRight">
-            <div class=CD_selectYear>
+            </section>
 
-                <i class="fas fa-angle-left prev"></i>
-                <div class="CD_mainMonth">
-                    <h2 class="CD_currentMonth"></h2>
-                    <h3 class="CD_currentYear"></h3>
+            <!-- 오른쪽영역 -->
+            <section class="CD_boxRight">
+                <div class=CD_selectYear>
+
+                    <i class="fas fa-angle-left prev"></i>
+                    <div class="CD_mainMonth">
+                        <h2 class="CD_currentMonth"></h2>
+                        <h3 class="CD_currentYear"></h3>
+                    </div>
+                    <i class="fas fa-angle-right next"></i>
                 </div>
-                <i class="fas fa-angle-right next"></i>
-            </div>
-            <div class=CD_mainCalendar>
-                <div class="CD_weekdays">
-                    <div>Sun</div>
-                    <div>Mon</div>
-                    <div>Tue</div>
-                    <div>Wed</div>
-                    <div>Thu</div>
-                    <div>Fri</div>
-                    <div>Sat</div>
+                <div class=CD_mainCalendar>
+                    <div class="CD_weekdays">
+                        <div>Sun</div>
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                    </div>
+                    <div class="CD_days">
+                    </div>
                 </div>
-                <div class="CD_days">
+                <div class="CD_goto-today">
+                    <div class="goto">
+                        <input type="text" placeholder="mm/yyyy" class="date-input">
+                        <button class="goto-btn">go</button>
+                        <button class="today-btn">today</button>
+                    </div>
                 </div>
-            </div>
-            <div class="CD_goto-today">
-                <div class="goto">
-                    <input type="text" placeholder="mm/yyyy" class="date-input">
-                    <button class="goto-btn">go</button>
-                    <button class="today-btn">today</button>
-                </div>
-            </div>
-        </section>
-    </div>
+            </section>
+        </div>
     </div>
 </body>
 
