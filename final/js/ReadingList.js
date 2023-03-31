@@ -3,9 +3,10 @@ function add_tr(table_id) { //행 추가
   let last_tr = table_body.lastElementChild;
   let tr_clone = last_tr.cloneNode(true); //*1)복제된 node 반환
 
-  let rlNum = +tr_clone.firstElementChild.textContent;
-  console.log(rlNum);
-  tr_clone.firstElementChild.textContent = rlNum + 1;
+  //한개씩 증가
+  // let rlNum = +tr_clone.firstElementChild.textContent;
+  // console.log(rlNum);
+  // tr_clone.firstElementChild.textContent = rlNum + 1;
 
   table_body.append(tr_clone);
   clean_first_tr(table_body.firstElementChild);
@@ -32,15 +33,15 @@ function remove_tr(This) { //행 삭제
 
 }
 
-let table = [1,2,3,4,5,6,7,8,9,10,11,12,13];
-// 삭제할 행의 인덱스
-let rowIndex = 1;
+// let table = [1,2,3,4,5,6,7,8,9,10,11,12,13];
+// // 삭제할 행의 인덱스
+// let rowIndex = 1;
 
-// 행 삭제
-table.splice(rowIndex, 1);
+// // 행 삭제
+// table.splice(rowIndex, 1);
 
-// 결과 출력
-console.log(table);
+// // 결과 출력
+// console.log(table);
 
 
 

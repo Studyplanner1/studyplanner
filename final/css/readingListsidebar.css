@@ -58,6 +58,7 @@ header #gnb a.gnb-close {
     font-size: 60px;
     position: absolute;
     text-align: center;
+   color: #9F9F9F;
 }
 header #gnb a.gnb-close:hover {
     color: rgb(120,76,213);
