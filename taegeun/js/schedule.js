@@ -1,25 +1,24 @@
-const $calendar = document.querySelector('.CD_mainCalendar');
+import {eventsArr} from './scheduleData.js';
+
 const $dateMonth = document.querySelector('.CD_currentMonth');
 const $dateYear = document.querySelector('.CD_currentYear');
 const $daysContainer = document.querySelector('.CD_days');
 const $prev = document.querySelector('.prev');
 const $next = document.querySelector('.next');
-const WEEKDAY = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 const MONTHNAMES = ["January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December"
 ];
 const $evnetDay = document.querySelector('.event-day');
 const $evnetsContainer = document.querySelector('.events');
 const $addEventSubmit = document.querySelector('.CD_add-event-btn');
-
 const $addEventBtn = document.querySelector('.CD_add-event');
 const $addEventContainer = document.querySelector('.CD_add-event-wrapper');
 const $addEventCloseBtn = document.querySelector('.close');
-const $boxLeft = document.querySelector('.CD_boxLeft');
 const $addEventTitle = document.querySelector('.event-name');
 const $addEventFrom = document.querySelector('.event-time-from');
 const $addEventTo = document.querySelector('.event-time-to');
-const $plus = document.querySelector('.fa-plus');
+const $dateInput = document.querySelector('.date-input');
+const $goBtn = document.querySelector('.goto-btn');
 
 
 let today = new Date();
@@ -27,34 +26,6 @@ let activeDay;
 let month = today.getMonth();
 let year = today.getFullYear();
 
-const eventsArr = [{
-        day: 29,
-        month: 3,
-        year: 2023,
-        events: [
-            {
-                title: "Event2",
-                time: "11:00",
-            },
-        ],
-    }, {
-        day: 2,
-        month: 3,
-        year: 2023,
-        events: [{
-                title: "Event 1 lorem ipsum",
-                time: "10:00AM",
-            },
-            {
-                title: "Event2",
-                time: "11:00",
-            },
-        ],
-    },
-
-];
-// const eventsArr = [];
-// getEvents();
 
 
 // 날짜 추가 함수
@@ -153,12 +124,6 @@ $next.addEventListener("click", nextMonth);
 
 // ****이벤트 추가****
 
-
-// $plus.addEventListener("click", () => {
-//     console.log("클릭됨");
-//     $addEventContainer.classList.toggle('active2');
-// });
-
 $addEventBtn.addEventListener("click", (e) => {
     $addEventContainer.classList.toggle('active2');
     $addEventBtn.classList.toggle('btnActive');
@@ -198,17 +163,6 @@ $addEventFrom.addEventListener("input", (e) => {
     }
 });
 
-//끝 시간
-$addEventTo.addEventListener("input", (e) => {
-    $addEventTo.value = $addEventTo.value.replace(/[^0-9:]/g, "");
-    if ($addEventTo.value.length === 2) {
-        $addEventTo.value += ":";
-    }
-    if ($addEventTo.value.length > 5) {
-        $addEventTo.value = $addEventTo.value.slice(0, 5);
-    }
-});
-
 
 
 
@@ -228,7 +182,6 @@ function addListner() {
             $days.forEach((day) => {
                 day.classList.remove("active");
             });
-// !!!!!!!!!!!!!!!!!!문제발생!!!!!!!!!!!!!!!!!!
             if (e.target.classList.contains("prev-date")) {
                 prevMonth();
                 setTimeout(() => {
@@ -266,8 +219,6 @@ function addListner() {
     });
 }
 
-// !!!!!!!!!!!!!!!!!!문제발생!!!!!!!!!!!!!!!!!!
-
 
 // active day를 이벤트 추가일에 보여주는 함수
 function getActiveDay(date) {
@@ -285,6 +236,7 @@ function updateEvents(date) {
             month + 1 === event.month &&
             year === event.year
         ) {
+            // 이벤트 추가시 박스 상세정보
             event.events.forEach((event) => {
                 events += `
                 <div class="event">
@@ -294,6 +246,9 @@ function updateEvents(date) {
                 </div>
                 <div class="event-date">
                     ${event.time}
+                </div>
+                <div class="event-place">
+                    ${event.place}
                 </div>
                 </div>`;
             });
@@ -315,20 +270,18 @@ $addEventSubmit.addEventListener("click", () => {
     const eventTitle = $addEventTitle.value;
     const eventTimeFrom = $addEventFrom.value;
     const eventTimeTo = $addEventTo.value;  
-    const $addInput = document.querySelector('.event-name');
     if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
         alert("입력칸을 전부 채워주세요!");
     }
 
     const timeFromArr = eventTimeFrom.split(":");
-    const timeToArr = eventTimeTo.split(":");
+    // const timeToArr = eventTimeTo.split(":");
     if (
         timeFromArr.length !== 2 ||
-        timeToArr.length !== 2 ||
         timeFromArr[0] > 23 ||
-        timeFromArr[1] > 59 ||
-        timeToArr[0] > 23 ||
-        timeToArr[1] > 59
+        timeFromArr[1] > 59
+        // timeToArr[0] > 23 ||
+        // timeToArr[1] > 59
     ) {
         //잘못입력 시 칸 비우기
         $addEventTitle.value='';
@@ -338,11 +291,12 @@ $addEventSubmit.addEventListener("click", () => {
         return;
     }
     const timeFrom = convertTime(eventTimeFrom);
-    const timeTo = convertTime(eventTimeTo);
+    // const timeTo = convertTime(eventTimeTo);
 
     const newEvent = {
         title: eventTitle,
-        time: timeFrom + " - " + timeTo,
+        time: timeFrom,
+        place : eventTimeTo,
     };
 
     let eventAdded = false;
@@ -394,8 +348,21 @@ function convertTime(time) {
     return time;
 }
 
+// 날짜 검색하기
+function searchData(){
+    console.log($dateInput.value);
+}
+searchData();
 
 
+$goBtn.addEventListener("click",()=>{
+    month--;
+    if (month < 0) {
+        month = 11;
+        year--;
+    }
+    initCalendar();
+});
 
 
 
