@@ -8,7 +8,7 @@
 } */
 
 body {
-  background: #EEF1FF;
+ background: rgb(237,235,247);
   width: 1920px;
   margin: 0 auto;
   height: 1080px;
@@ -67,6 +67,10 @@ h1 {
   padding: 8px 10px;
 
   
+}
+.container ._table .form_control img{
+  width: auto;
+  max-height: 40px;
 }
 
 
