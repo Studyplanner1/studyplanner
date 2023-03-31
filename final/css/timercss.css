@@ -1,5 +1,5 @@
 
-@import url(common.css);
+@import url(common-c.css);
 
 
 
@@ -27,7 +27,7 @@ body {
 
     background-color: rgb(250, 251, 253);
     border-radius: 10%;
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
 }
 
 .timNowTime {
@@ -50,7 +50,7 @@ body {
 }
 
 .timNowTime > div {
-    border: 1px solid #000;
+    /* border: 1px solid #000; */
     width: 110px;
     text-align: center;
     font-size: 15px;

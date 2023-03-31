@@ -1,10 +1,9 @@
 body {
-
-    /* margin: 0 auto; */
-    position: absolute;
+width: 1920px;    
+    /* position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); */
     background: rgb(237, 235, 247);
 }
 
@@ -18,6 +17,7 @@ body {
     justify-content: space-between;
     /* box-shadow: 2px 2px 3px 3px rgb(200, 200, 200); */
     box-shadow: 0px 4px 6px 6px rgba(202, 202, 202, 0.3);
+    margin: 0 auto;
 }
 
 /* 왼쪽박스 영역 */

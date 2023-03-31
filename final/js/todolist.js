@@ -125,16 +125,16 @@ function tdGoal() {
     let finishPercent = ($tdLiFinish.length/$tdLi.length)*100;
     if ($tdLi.length !== 0){
         $contentBar.style.width = finishPercent + '%';
-        $kirby.attributes.src.nodeValue = '/source/Kirby.gif';
+        $kirby.attributes.src.nodeValue = '/final/source/Kirby.gif';
         $kirby.style.width = '55px';
     }
     if (finishPercent === 0 || $tdLi.length == 0) {
         $contentBar.style.width = '0%';
-        $kirby.attributes.src.nodeValue = '/source/Kirby-zzz.gif';
+        $kirby.attributes.src.nodeValue = '/final/source/Kirby-zzz.gif';
         $kirby.style.width = '65px';
     }
     if (finishPercent === 100) {
-        $kirby.attributes.src.nodeValue = '/source/Kirby-eat.gif';
+        $kirby.attributes.src.nodeValue = '/final/source/Kirby-eat.gif';
         $kirby.style.width = '90px';
         $kirbyFood.classList.add('eated');
     } else {

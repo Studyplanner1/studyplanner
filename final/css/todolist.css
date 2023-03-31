@@ -1,4 +1,4 @@
-@import url('/sidemenu/sidemenu.css');
+@import url('/final/css/sidemenu.css');
 
 #td-wrap {
     display: flex; /* 햄버거 버튼 왼쪽 상단 정렬용 */
