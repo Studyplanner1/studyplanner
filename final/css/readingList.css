@@ -70,7 +70,8 @@ h1 {
 }
 .container ._table .form_control img{
   width: auto;
-  max-height: 40px;
+  max-height: 55px;
+  /* border: 1px solid #000; */
 }
 
 
