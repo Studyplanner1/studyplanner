@@ -1,4 +1,6 @@
-import {eventsArr} from './scheduleData.js';
+import {
+    eventsArr
+} from './scheduleData.js';
 
 const $dateMonth = document.querySelector('.CD_currentMonth');
 const $dateYear = document.querySelector('.CD_currentYear');
@@ -19,7 +21,7 @@ const $addEventFrom = document.querySelector('.event-time-from');
 const $addEventTo = document.querySelector('.event-time-to');
 const $dateInput = document.querySelector('.date-input');
 const $goBtn = document.querySelector('.goto-btn');
-
+const $clickBtn = document.querySelector('.today-btn');
 
 let today = new Date();
 let activeDay;
@@ -142,12 +144,13 @@ document.addEventListener("click", (e) => {
 })
 
 // today 버튼 클릭 시 오늘로 돌아오기
-const $clickBtn = document.querySelector('.today-btn');
-$clickBtn.addEventListener("click",()=>{
-    today=new Date();
+
+$clickBtn.addEventListener("click", () => {
+    today = new Date();
     month = today.getMonth();
-    year= today.getFullYear();
+    year = today.getFullYear();
     initCalendar();
+    console.log(month);
 });
 
 //입력 양식
@@ -155,12 +158,23 @@ $clickBtn.addEventListener("click",()=>{
 
 $addEventFrom.addEventListener("input", (e) => {
     $addEventFrom.value = $addEventFrom.value.replace(/[^0-9:]/g, "");
+
     if ($addEventFrom.value.length === 2) {
         $addEventFrom.value += ":";
     }
     if ($addEventFrom.value.length > 5) {
         $addEventFrom.value = $addEventFrom.value.slice(0, 5);
     }
+    //:(콜론) 지워지게 설정
+    if($addEventFrom.value.length===3){
+        if(e.data ===null){
+            const firstInputData = $addEventFrom.value.slice(0,1);
+            // const secondInputData = $addEventFrom.value.slice(1,2);
+            $addEventFrom.value = `${firstInputData}`;
+        }
+    }
+    
+    
 });
 
 
@@ -269,11 +283,15 @@ function updateEvents(date) {
 $addEventSubmit.addEventListener("click", () => {
     const eventTitle = $addEventTitle.value;
     const eventTimeFrom = $addEventFrom.value;
-    const eventTimeTo = $addEventTo.value;  
+    const eventTimeTo = $addEventTo.value;
     if (eventTitle === "" || eventTimeFrom === "" || eventTimeTo === "") {
         alert("입력칸을 전부 채워주세요!");
     }
-
+    // console.log(eventTimeFrom.length);
+    // if(eventTimeFrom.indexOf(2)!==':'){
+    //     eventTimeFrom.push(2)=':'
+    // }
+    
     const timeFromArr = eventTimeFrom.split(":");
     // const timeToArr = eventTimeTo.split(":");
     if (
@@ -284,9 +302,9 @@ $addEventSubmit.addEventListener("click", () => {
         // timeToArr[1] > 59
     ) {
         //잘못입력 시 칸 비우기
-        $addEventTitle.value='';
-        $addEventFrom.value='';
-        $addEventTo.value=''; 
+        $addEventTitle.value = '';
+        $addEventFrom.value = '';
+        $addEventTo.value = '';
         alert("올바른 시간을 입력해주세요");
         return;
     }
@@ -296,7 +314,7 @@ $addEventSubmit.addEventListener("click", () => {
     const newEvent = {
         title: eventTitle,
         time: timeFrom,
-        place : eventTimeTo,
+        place: eventTimeTo,
     };
 
     let eventAdded = false;
@@ -347,24 +365,6 @@ function convertTime(time) {
     time = timeHour + ":" + timeMin + " " + timeFormat;
     return time;
 }
-
-// 날짜 검색하기
-function searchData(){
-    console.log($dateInput.value);
-}
-searchData();
-
-
-$goBtn.addEventListener("click",()=>{
-    month--;
-    if (month < 0) {
-        month = 11;
-        year--;
-    }
-    initCalendar();
-});
-
-
 
 
 
@@ -446,5 +446,4 @@ function SMnextMonth() {
 //이벤트 추가
 $SMprev.addEventListener("click", SMprevMonth);
 $SMnext.addEventListener("click", SMnextMonth);
-
 // export default;
