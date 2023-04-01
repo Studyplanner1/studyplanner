@@ -17,7 +17,10 @@ width: 1920px;
     justify-content: space-between;
     /* box-shadow: 2px 2px 3px 3px rgb(200, 200, 200); */
     box-shadow: 0px 4px 6px 6px rgba(202, 202, 202, 0.3);
-    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
 }
 
 /* 왼쪽박스 영역 */
@@ -171,7 +174,7 @@ width: 1920px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-bottom: 80px;
+    padding-bottom: 40px;
     font-size: 2em;
     font-weight: 500;
     color:rgb(225, 221, 249);
@@ -373,7 +376,6 @@ width: 1920px;
     font-weight: 600;
     padding-top: 6px;
     text-align: center;
-
 }
 
 .CD_selectYear h3 {
@@ -478,11 +480,14 @@ width: 1920px;
 .CD_mainCalendar .CD_days .active{
     position: relative;
     color: white;
-
     font-weight: 700;
     background: rgb(120, 76, 213);
     border-radius: 5px;
-    
+    background-image: url(/final/source/Kirby.gif);
+    background-position: 10% 65%;
+
+    background-size: 45px;
+    background-repeat: no-repeat;
 }
 .CD_mainCalendar .CD_days .active::before{
     content: "";
@@ -524,7 +529,7 @@ width: 1920px;
 .CD_goto-today .goto input,
 .CD_goto-today .goto button,
 .CD_goto-today .today-btn {
-    font-size: 1.3em;
+    font-size: 1.5em;
 }
 
 .CD_goto-today .goto {
@@ -532,6 +537,7 @@ width: 1920px;
     align-items: center;
     border-radius: 5px;
     overflow: hidden;
+    justify-content: end;
     /* border: 1px solid #000; */
 
 }
@@ -556,6 +562,7 @@ width: 1920px;
     color: rgb(120, 76, 213);
     background-color: rgb(237, 235, 247);
     margin-left: 5px;
+    padding: 0 15px;
 }
 
 .CD_goto-today button:hover {
