@@ -302,9 +302,7 @@ $addEventSubmit.addEventListener("click", () => {
         // timeToArr[1] > 59
     ) {
         //잘못입력 시 칸 비우기
-        $addEventTitle.value = '';
         $addEventFrom.value = '';
-        $addEventTo.value = '';
         alert("올바른 시간을 입력해주세요");
         return;
     }
