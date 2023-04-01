@@ -58,6 +58,24 @@ const eventsArr = [{
             time: "12:00",
             place: "우리동네",
         }, ],
+    },{
+        day: 3,
+        month: 4,
+        year: 2023,
+        events: [{
+            title: "댄스학원",
+            time: "12:00",
+            place: "강남",
+        }, ],
+    },{
+        day: 3,
+        month: 4,
+        year: 2023,
+        events: [{
+            title: "정형외과",
+            time: "18:00",
+            place: "서초",
+        }, ],
     },
 
 ];
