@@ -58,7 +58,7 @@ const tim25min = document.querySelector('.tim25min');
 const tim1min = document.querySelector('.tim1min');
 const $restTime = document.querySelector('.restTime');
 const $timeUp = document.querySelector('timeUp');
-let sec = 60;
+let sec = 0;
 let min = 0;
 let tim;
 
@@ -68,13 +68,14 @@ function timeout() {
     sec--;
     if(sec < 0) {
         min--;
+        sec = 59; 
         if(min < 0 ){
             min = 0;
             sec= 0;
-           
+        
         
         }
-        sec = 59; 
+         
     } 
    
 }
@@ -83,17 +84,20 @@ function sub() {
     timeout();
     $restTime.textContent = (min > 9 ? min : "0" + min) 
                             +" : "+ (sec> 9 ? sec : "0" + sec);
-    time();
+    
 
 }
 
 let Flag =  false; 
+
 function time() {
-   if(!Flag) tim = setInterval(sub, 1000);
-
-   Flag=true;
-
-    return;
+   if(!Flag) {
+    
+    clearInterval(tim);
+    tim = setInterval(sub, 1000);
+    
+}
+Flag=true;
 }
 
 tim25min.onclick = function() {
