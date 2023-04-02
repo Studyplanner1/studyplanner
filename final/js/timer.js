@@ -72,10 +72,9 @@ function timeout() {
             min = 0;
             sec= 0;
            
-           // 
-
-            return;
+        
         }
+        sec = 59; 
     } 
    
 }
