@@ -24,12 +24,12 @@
 1. 캘린더 html, css, js
 2. PPT Design
 <br/><br/>
-> ##### 달력
+> #### 달력
 > - 달력 지난 달, 다음 달 기능 구현 `css` `js`
 > - 미니 캘린더로 메인 캘린더와 날짜 비교 기능 구현 `css` `js`
 > - 화면에 보여지는 지난 달, 다음 달 클릭 시 해당 달로 이동 `js` 
 
-> ##### 일정 추가 및 조회
+> #### 일정 추가 및 조회
 > - 활성화된 날짜 일정 확인 기능 구현`js`
 > - 이미 추가된 일정 확인 기능 구현`js`
 > - 이벤트 추가 기능 (일정명, 시간, 장소) 구현`css` `js`
@@ -63,7 +63,7 @@
 > - 각 메뉴 hover 시 눈에 띄일 수 있는 애니메이션 부여 `css`
 <br/>
 
-#### Login page / reading List - 권상지
+### Login page / reading List - 권상지
 1. 로그인 페이지 html,css,js
 2. ReadingList html,css,js
 <br/><br/>
@@ -77,7 +77,7 @@
 > - 완독여부 기능은 input태그가 아닌 option 값을 주어 시각적으로 빠르게 O,X 여부를 파악할 수 있도록 구현 `css` `js`
 <br/>
 
-#### Timer / Tutorial - 이채원
+### Timer / Tutorial - 이채원
 1. 타이머 페이지 html,css,js
 2. Tutorial, Main 페이지 html,css,js
 <br/><br/>
