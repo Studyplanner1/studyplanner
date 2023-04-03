@@ -34,6 +34,7 @@
 > - 이벤트 추가 기능 (일정명, 시간, 장소) `css` `js`
 > - 시간(24:00) 입력 양식에 맞지 않게 입력 불가 `js`
 <br/>
+
 ### Todo list / Side menu - 조예원
 1. 투두리스트의 html, css, js
 2. 사이드메뉴의 html, css, js
